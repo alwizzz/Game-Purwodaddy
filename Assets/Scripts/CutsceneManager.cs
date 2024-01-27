@@ -12,6 +12,8 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] public GameObject cutScene1;
     [SerializeField] public GameObject cutScene2;
     [SerializeField] public GameObject cutScene3;
+    [SerializeField] public GameObject cutScene4;
+    [SerializeField] public GameObject cutScene5;
 
     public void change_to_cutscene2()
     {
@@ -23,5 +25,17 @@ public class CutsceneManager : MonoBehaviour
     {
         cutScene3.SetActive(true);
         cutScene2.SetActive(false);
+    }
+
+    public void change_to_cutscene4()
+    {
+        cutScene4.SetActive(true);
+        cutScene3.SetActive(false);
+    }
+
+    public void change_to_cutscene5()
+    {
+        cutScene5.SetActive(true);
+        cutScene4.SetActive(false);
     }
 }

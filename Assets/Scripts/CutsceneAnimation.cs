@@ -8,11 +8,6 @@ public class CutsceneAnimation : MonoBehaviour
 
     public Animator animate;
     
-    public void PlayAnimate()
-    {
-        animate.Play("Cutscene_Start");
-    }
-
     public void progressToCutscene2()
     {
         cutsceneManager.GetComponent<CutsceneManager>().change_to_cutscene2();
@@ -21,5 +16,15 @@ public class CutsceneAnimation : MonoBehaviour
     public void progressToCutscene3()
     {
         cutsceneManager.GetComponent<CutsceneManager>().change_to_cutscene3();
+    }
+
+    public void progressToCutscene4()
+    {
+        cutsceneManager.GetComponent<CutsceneManager>().change_to_cutscene4();
+    }
+
+    public void progressToCutscene5()
+    {
+        cutsceneManager.GetComponent<CutsceneManager>().change_to_cutscene5();
     }
 }

@@ -502,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &588984270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1029,6 +1029,8 @@ MonoBehaviour:
   cutScene1: {fileID: 1090294372}
   cutScene2: {fileID: 1648649357}
   cutScene3: {fileID: 2078804102}
+  cutScene4: {fileID: 588984269}
+  cutScene5: {fileID: 0}
 --- !u!1 &1404193465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +1819,7 @@ GameObject:
   - component: {fileID: 2078804106}
   - component: {fileID: 2078804105}
   - component: {fileID: 2078804104}
+  - component: {fileID: 2078804109}
   m_Layer: 5
   m_Name: Cutscene3
   m_TagString: Untagged
@@ -1941,6 +1944,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2078804109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078804102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa3165d5328c3f45bedcd49d912da4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneManager: {fileID: 1306638424}
+  animate: {fileID: 2078804104}
 --- !u!1001 &2122116532
 PrefabInstance:
   m_ObjectHideFlags: 0
