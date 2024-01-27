@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class CutsceneAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] public CutsceneManager cutsceneManager;
+
+    public Animator animate;
+    
     public void PlayAnimate()
     {
-        // Play Animation
+        animate.Play("Cutscene_Start");
+    }
+
+    public void progressToCutscene2()
+    {
+        cutsceneManager.GetComponent<CutsceneManager>().change_to_cutscene2();
+    }
+
+    public void progressToCutscene3()
+    {
+        cutsceneManager.GetComponent<CutsceneManager>().change_to_cutscene3();
     }
 }

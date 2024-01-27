@@ -12,13 +12,16 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] public GameObject cutScene1;
     [SerializeField] public GameObject cutScene2;
     [SerializeField] public GameObject cutScene3;
-    
-    // Update is called once per frame
-    void Update()
+
+    public void change_to_cutscene2()
     {
-        if(Input.GetKey(nextKey))
-        {
-            cutScene2.SetActive(false);
-        }
+        cutScene2.SetActive(true);
+        cutScene1.SetActive(false);
+    }
+
+    public void change_to_cutscene3()
+    {
+        cutScene3.SetActive(true);
+        cutScene2.SetActive(false);
     }
 }
