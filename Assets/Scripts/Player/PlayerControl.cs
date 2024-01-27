@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    [SerializeField] private bool freeze;
+
     [Header("Key Inputs")]
     [SerializeField] private KeyCode leftKey;
     [SerializeField] private KeyCode rightKey;
@@ -22,6 +24,8 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        if (freeze) { return; }
+
         ProcessInteractInput();
         ProcessPlayerInput();
     }
@@ -60,7 +64,7 @@ public class PlayerControl : MonoBehaviour
         {
             if(sensor.InteractableDetected())
             {
-                print("interact");
+                sensor.Interact();
             } else
             {
                 print("attempt to interact when there is no interactable nearby");
