@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class TakeInteraction : Interactable
 {
+    [SerializeField] private string itemKey;
+
     public override void Interact()
     {
-        print("take interaction");
+        Take();
+    }
+
+    private void Take()
+    {
+        InventorySystem.Instance().AddItem(itemKey);
+        Destroy(gameObject);
     }
 }
