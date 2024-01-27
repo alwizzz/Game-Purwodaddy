@@ -13,7 +13,11 @@ public class InventorySystem : StaticReference<InventorySystem>
 
     public void AddItem(string itemKey)
     {
-        if (HasItem(itemKey)) { print($"INVENTORY: duplication warning! ({itemKey})"); }
+        if (HasItem(itemKey)) 
+        { 
+            print($"INVENTORY: duplication warning! failed ({itemKey})");
+            return;
+        }
 
         inventory.Add(itemKey);
         print($"INVENTORY: {itemKey} added to inventory");

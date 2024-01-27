@@ -13,7 +13,8 @@ public class TakeInteraction : Interactable
 
     private void Take()
     {
-        InventorySystem.Instance().AddItem(itemKey);
+        //InventorySystem.Instance().AddItem(itemKey);
+        InformationSystem.Instance().AddInformation(itemKey);
         Destroy(gameObject);
     }
 }
