@@ -87,4 +87,6 @@ public class PlayerControl : MonoBehaviour
 
     public void UpdateAbleToMoveLeft(bool value) { ableToMoveLeft = value; }
     public void UpdateAbleToMoveRight(bool value) { ableToMoveRight = value; }
+
+    public void SetFreeze(bool value) { freeze = value; }
 }

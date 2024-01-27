@@ -13,7 +13,11 @@ public class InformationSystem : StaticReference<InformationSystem>
 
     public void AddInformation(string informationKey)
     {
-        if (HasInformation(informationKey)) { print($"INFORMATION: duplication warning! ({informationKey})"); }
+        if (HasInformation(informationKey)) 
+        { 
+            print($"INFORMATION: duplication warning! failed ({informationKey})");
+            return;
+        }
 
         informations.Add(informationKey);
         print($"INFORMATION: {informationKey} added to informations");
