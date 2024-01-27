@@ -1,0 +1,3 @@
+[submodule "Assets/HelperScripts"]
+	path = Assets/HelperScripts
+	url = https://github.com/alwizzz/UnityHelperScripts
