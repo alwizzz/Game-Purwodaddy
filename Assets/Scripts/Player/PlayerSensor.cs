@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSensor : MonoBehaviour
 {
     [SerializeField] private bool interactableDetected;
-    [SerializeField] private GameObject interactable;
+    [SerializeField] private Interactable interactable;
 
     private float xValue;
 
@@ -34,7 +34,13 @@ public class PlayerSensor : MonoBehaviour
     private void SetInteractableDetected(GameObject obj)
     {
         interactableDetected = (obj == null ? false : true);
-        interactable = obj;
+        if(obj == null)
+        {
+            interactable = null;
+        } else
+        {
+            interactable = obj.GetComponent<Interactable>();
+        }
     }
 
     public void Flip(bool value)
@@ -57,5 +63,10 @@ public class PlayerSensor : MonoBehaviour
     }
 
     public bool InteractableDetected() => interactableDetected;
+
+    public void Interact()
+    {
+        interactable.Interact();
+    }
 
 }
