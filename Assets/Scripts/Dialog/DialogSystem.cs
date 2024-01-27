@@ -102,7 +102,12 @@ public class DialogSystem : StaticReference<DialogSystem>
             Hide();
 
             playerControl.SetFreeze(false);
-            InformationSystem.Instance().AddInformation(dialogData.informationKey);
+
+            var informationKey = dialogData.informationKey;
+            if(informationKey != "none")
+            {
+                InformationSystem.Instance().AddInformation(dialogData.informationKey);
+            }
         }
     }
 

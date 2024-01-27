@@ -33,4 +33,6 @@ public class InformationSystem : StaticReference<InformationSystem>
     {
         BaseOnDestroy();
     }
+
+    public List<string> GetInformations() => informations;
 }
