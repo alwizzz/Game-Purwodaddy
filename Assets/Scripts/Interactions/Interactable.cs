@@ -12,5 +12,9 @@ public abstract class Interactable : MonoBehaviour
     }
 
     public InteractionType interactionType;
+    protected bool isFocusedByPlayer;
     public abstract void Interact();
+
+    public void SetIsFocusedByPlayer(bool value) { isFocusedByPlayer = value; }
+    public bool IsFocusedByPlayer() => isFocusedByPlayer;
 }

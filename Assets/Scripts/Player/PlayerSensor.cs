@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerSensor : MonoBehaviour
 {
     [SerializeField] private bool interactableDetected;
-    [SerializeField] private Interactable interactable;
+    [SerializeField] private List<Interactable> detectedInteractables;
+    [SerializeField] private Interactable focusedInteractable;
 
     private float xValue;
 
@@ -14,12 +15,62 @@ public class PlayerSensor : MonoBehaviour
         xValue = Mathf.Abs(transform.localPosition.x);
     }
 
+    private void Update()
+    {
+        UpdateInteractableDetected();
+        if(!interactableDetected) { return; }
+
+        SortDetectedInteractables();
+        UpdateFocusedInteractable();
+    }
+
+    private void UpdateInteractableDetected()
+    {
+        interactableDetected = (detectedInteractables.Count > 0 ? true : false);
+        if (!interactableDetected) { focusedInteractable = null; }
+    }
+
+    private void SortDetectedInteractables()
+    {
+        detectedInteractables.Sort(
+            delegate(Interactable i1, Interactable i2)
+            {
+                var i1Distance = Vector3.Distance(transform.position, i1.gameObject.transform.position);
+                var i2Distance = Vector3.Distance(transform.position, i2.gameObject.transform.position);
+
+                if(i2Distance < i1Distance)
+                {
+                    return 1;
+                } else
+                {
+                    return -1;
+                }
+            }
+        );
+    }
+
+    private void UpdateFocusedInteractable()
+    {
+        focusedInteractable = detectedInteractables[0];
+        for(int i=0; i<detectedInteractables.Count; i++)
+        {
+            if (i == 0)
+            {
+                detectedInteractables[i].SetIsFocusedByPlayer(true);
+            } else
+            {
+                detectedInteractables[i].SetIsFocusedByPlayer(false);
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Interactable")
         {
-            SetInteractableDetected(collision.gameObject);
+            //SetInteractableDetected(collision.gameObject);
+            AddToDetectedInteractables(collision.gameObject);
         }
     }
 
@@ -27,20 +78,20 @@ public class PlayerSensor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Interactable")
         {
-            SetInteractableDetected(null);
+            RemoveFromDetectedInteractables(collision.gameObject);
         }
     }
 
-    private void SetInteractableDetected(GameObject obj)
+    private void AddToDetectedInteractables(GameObject obj)
     {
-        interactableDetected = (obj == null ? false : true);
-        if(obj == null)
-        {
-            interactable = null;
-        } else
-        {
-            interactable = obj.GetComponent<Interactable>();
-        }
+        var interactable = obj.GetComponent<Interactable>();
+        detectedInteractables.Add(interactable);
+    }
+
+    private void RemoveFromDetectedInteractables(GameObject obj)
+    {
+        var interactable = obj.GetComponent<Interactable>();
+        detectedInteractables.Remove(interactable);
     }
 
     public void Flip(bool value)
@@ -66,7 +117,13 @@ public class PlayerSensor : MonoBehaviour
 
     public void Interact()
     {
-        interactable.Interact();
+        if (!interactableDetected)
+        {
+            print("ERROR");
+            return;
+        }
+
+        focusedInteractable.Interact();
     }
 
 }
