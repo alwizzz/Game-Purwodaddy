@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7283019, g: 0.7283019, b: 0.7283019, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7283019, g: 0.7283019, b: 0.7283019, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7283019, g: 0.7283019, b: 0.7283019, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1766,38 +1766,38 @@ MonoBehaviour:
     emotionKey: normal
     sprite: {fileID: 21300000, guid: 253a79423c084374790bc3faee64de14, type: 3}
   - characterKey: Jamal
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: 253a79423c084374790bc3faee64de14, type: 3}
+    emotionKey: bingung
+    sprite: {fileID: 21300000, guid: 26e9f65120f1d414592cf1d55887db77, type: 3}
   - characterKey: Jamal
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: 253a79423c084374790bc3faee64de14, type: 3}
+    emotionKey: kaget
+    sprite: {fileID: 21300000, guid: 623c128273b9ada40b373dc8d453410e, type: 3}
   - characterKey: Baskom
     emotionKey: normal
     sprite: {fileID: 21300000, guid: 2caf80ce6cca1334190485e1259fee97, type: 3}
   - characterKey: Baskom
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: 2caf80ce6cca1334190485e1259fee97, type: 3}
+    emotionKey: senyum
+    sprite: {fileID: 21300000, guid: 5a8de0ed5bb78484fbd81c569756f330, type: 3}
   - characterKey: Baskom
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: 2caf80ce6cca1334190485e1259fee97, type: 3}
+    emotionKey: ketawa
+    sprite: {fileID: 21300000, guid: e954ded839f7a514eb2fd269d7de14e2, type: 3}
   - characterKey: PakBaskoro
     emotionKey: normal
     sprite: {fileID: 21300000, guid: e4250e8df18b8344e986fe474f668b42, type: 3}
   - characterKey: PakBaskoro
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: e4250e8df18b8344e986fe474f668b42, type: 3}
+    emotionKey: senyum
+    sprite: {fileID: 21300000, guid: 5dbe77219cf7a564ca8ca1881faca748, type: 3}
   - characterKey: PakBaskoro
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: e4250e8df18b8344e986fe474f668b42, type: 3}
-  - characterKey: IbuKokom
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: 0af8ed672596dd044aa685a523ed6dfa, type: 3}
-  - characterKey: IbuKokom
+    emotionKey: ketawa
+    sprite: {fileID: 21300000, guid: 7d3c83fe57a29ea49a7de4626d8b8227, type: 3}
+  - characterKey: BuKokom
     emotionKey: normal
     sprite: {fileID: 21300000, guid: 0af8ed672596dd044aa685a523ed6dfa, type: 3}
-  - characterKey: IbuKokom
-    emotionKey: normal
-    sprite: {fileID: 21300000, guid: 0af8ed672596dd044aa685a523ed6dfa, type: 3}
+  - characterKey: BuKokom
+    emotionKey: bingung
+    sprite: {fileID: 21300000, guid: 371788740a80d354b981f4db3199ec12, type: 3}
+  - characterKey: BuKokom
+    emotionKey: ketawa
+    sprite: {fileID: 21300000, guid: a79306720e39105418fac3b0740f87c7, type: 3}
   ongoingDialog: 0
   dialogLines: []
   currentDialogLine:

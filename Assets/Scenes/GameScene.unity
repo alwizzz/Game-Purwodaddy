@@ -2847,6 +2847,82 @@ PrefabInstance:
       propertyPath: playerControl
       value: 
       objectReference: {fileID: 2124165858}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 26e9f65120f1d414592cf1d55887db77, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 623c128273b9ada40b373dc8d453410e, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a8de0ed5bb78484fbd81c569756f330, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e954ded839f7a514eb2fd269d7de14e2, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5dbe77219cf7a564ca8ca1881faca748, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[8].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d3c83fe57a29ea49a7de4626d8b8227, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[10].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 371788740a80d354b981f4db3199ec12, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[11].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a79306720e39105418fac3b0740f87c7, type: 3}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[1].emotionKey
+      value: bingung
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[2].emotionKey
+      value: kaget
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[4].emotionKey
+      value: senyum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[5].emotionKey
+      value: ketawa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[7].emotionKey
+      value: senyum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[8].emotionKey
+      value: ketawa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[10].emotionKey
+      value: bingung
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[11].emotionKey
+      value: ketawa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[9].characterKey
+      value: BuKokom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[10].characterKey
+      value: BuKokom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540413832480524645, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
+      propertyPath: dialogCharacters.Array.data[11].characterKey
+      value: BuKokom
+      objectReference: {fileID: 0}
     - target: {fileID: 5111801557774936963, guid: 107ffd26a92fc554d923f1fd59203fbe, type: 3}
       propertyPath: m_Color.b
       value: 0.7283019
