@@ -21,6 +21,10 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private SpriteRenderer model;
     [SerializeField] private PlayerSensor sensor;
 
+    [Header("Animator")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private bool isWalking;
+
 
     private void Update()
     {
@@ -36,8 +40,13 @@ public class PlayerControl : MonoBehaviour
         bool moveRight = Input.GetKey(rightKey);
 
         // do nothing if either player not pushing any button or pushing both button
-        if (moveLeft == moveRight) { return; }
+        if (moveLeft == moveRight) 
+        {
+            animator.SetBool("isWalking", false);
+            return; 
+        }
 
+        animator.SetBool("isWalking", true);
         // neutralizer will stop the movement if unable to move in that direction
         if (moveLeft)
         {
@@ -88,5 +97,9 @@ public class PlayerControl : MonoBehaviour
     public void UpdateAbleToMoveLeft(bool value) { ableToMoveLeft = value; }
     public void UpdateAbleToMoveRight(bool value) { ableToMoveRight = value; }
 
-    public void SetFreeze(bool value) { freeze = value; }
+    public void SetFreeze(bool value) 
+    { 
+        freeze = value;
+        animator.SetBool("isWalking", (freeze ? false : true));
+    }
 }
