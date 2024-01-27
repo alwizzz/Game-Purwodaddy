@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     [Header("Key Inputs")]
     [SerializeField] private KeyCode leftKey;
@@ -15,8 +15,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool ableToMoveLeft;
     [SerializeField] private bool ableToMoveRight;
 
+    [Header("Caches")]
+    [SerializeField] private SpriteRenderer model;
+    [SerializeField] private PlayerSensor sensor;
+
+
     private void Update()
     {
+        ProcessInteractInput();
         ProcessPlayerInput();
     }
 
@@ -33,13 +39,46 @@ public class PlayerMovement : MonoBehaviour
         {
             int neutralizer = (ableToMoveLeft ? 1 : 0);
             transform.Translate(Vector2.left * moveSpeed * neutralizer * Time.deltaTime);
+            //transform.rotation = Quaternion.Euler(0, -180, 0);
+            FlipModel(true);
         }
         else if (moveRight)
         {
             int neutralizer = (ableToMoveRight ? 1 : 0);
             transform.Translate(Vector2.right * moveSpeed * neutralizer * Time.deltaTime);
+            //transform.rotation = Quaternion.Euler(0, 0, 0);
+            FlipModel(false);
         }
         else { print("ERROR"); }
+    }
+
+    private void ProcessInteractInput()
+    {
+        bool interact = Input.GetKeyDown(interactKey);
+
+        if(interact)
+        {
+            if(sensor.InteractableDetected())
+            {
+                print("interact");
+            } else
+            {
+                print("attempt to interact when there is no interactable nearby");
+            }
+        }
+    }
+
+    private void FlipModel(bool value)
+    {
+        if(value == true)
+        {
+            model.flipX = true;
+        } else
+        {
+            model.flipX = false;
+        }
+
+        sensor.Flip(value);
     }
 
     public void UpdateAbleToMoveLeft(bool value) { ableToMoveLeft = value; }

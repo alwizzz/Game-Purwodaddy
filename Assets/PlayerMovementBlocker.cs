@@ -8,7 +8,7 @@ public class PlayerMovementBlocker : MonoBehaviour
     [SerializeField] private bool directionToRight;
     [SerializeField] private bool ableToMove;
 
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerControl playerControl;
 
     private void Start()
     {
@@ -38,10 +38,10 @@ public class PlayerMovementBlocker : MonoBehaviour
         ableToMove = value;
         if(directionToRight)
         {
-            playerMovement.UpdateAbleToMoveRight(value);
+            playerControl.UpdateAbleToMoveRight(value);
         } else
         {
-            playerMovement.UpdateAbleToMoveLeft(value);
+            playerControl.UpdateAbleToMoveLeft(value);
         }
     }
 }
