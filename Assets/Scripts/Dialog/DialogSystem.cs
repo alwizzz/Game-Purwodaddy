@@ -21,7 +21,7 @@ public class DialogSystem : StaticReference<DialogSystem>
 
     [Header("Process")]
     [SerializeField] private bool ongoingDialog;
-    [SerializeField] private Queue<DialogData.DialogLine> dialogLinesQueue;
+    [SerializeField] private List<DialogData.DialogLine> dialogLines;
     [SerializeField] private DialogData.DialogLine currentDialogLine;
 
     [Header("Caches")]
@@ -33,6 +33,12 @@ public class DialogSystem : StaticReference<DialogSystem>
     [SerializeField] private Image characterImageLeft;
     [SerializeField] private Image characterImageRight;
     [SerializeField] private PlayerControl playerControl;
+
+    [SerializeField] private Button dialogNextButton;
+    [SerializeField] private Button dialogOptionButton1;
+    [SerializeField] private Button dialogOptionButton2;
+    [SerializeField] private Button dialogOptionButton3;
+
 
     private void Awake()
     {
@@ -73,15 +79,10 @@ public class DialogSystem : StaticReference<DialogSystem>
 
     private void Fetch()
     {
-        dialogLinesQueue = new Queue<DialogData.DialogLine>();
-
-        foreach (DialogData.DialogLine dl in dialogData.lines)
-        {
-            dialogLinesQueue.Enqueue(dl);
-        }
+        dialogLines = new List<DialogData.DialogLine>();
     }
 
-    public void NextLine()
+    public void NextLine(string nextDialogLineKey = "")
     {
         if (!ongoingDialog)
         {
@@ -89,9 +90,20 @@ public class DialogSystem : StaticReference<DialogSystem>
             return;
         }
 
-        if (dialogLinesQueue.Count > 0)
+        if (dialogLines.Count > 0)
         {
-            currentDialogLine = dialogLinesQueue.Dequeue();
+            if(nextDialogLineKey == "")
+            {
+                currentDialogLine = dialogLines.Find(e => e.key == currentDialogLine.nextKey);
+            } else
+            {
+                currentDialogLine = dialogLines.Find(e => e.key == nextDialogLineKey);
+            }
+            //if(!currentDialogLine)
+            //{
+            //    print("ERROR");
+            //}
+
             Load(currentDialogLine);
         }
         else
@@ -115,6 +127,39 @@ public class DialogSystem : StaticReference<DialogSystem>
     {
         dialogHeader.text = dialogLine.characterKey;
         dialogContent.text = dialogLine.content;
+        
+        var conditionalDialog = dialogLine.conditionalDialog;
+        if (conditionalDialog)
+        {
+            dialogNextButton.gameObject.SetActive(false);
+            
+            dialogOptionButton1.onClick.AddListener(
+                () => NextLine(dialogLine.dialogOption1.nextKey)
+            );
+            dialogOptionButton1.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption1.content;
+            dialogOptionButton1.gameObject.SetActive(true);
+
+            dialogOptionButton2.onClick.AddListener(
+                () => NextLine(dialogLine.dialogOption2.nextKey)
+            );
+            dialogOptionButton2.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption2.content;
+            dialogOptionButton2.gameObject.SetActive(true);
+
+            dialogOptionButton3.onClick.AddListener(
+                () => NextLine(dialogLine.dialogOption3.nextKey)
+            );
+            dialogOptionButton3.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption3.content;
+            dialogOptionButton3.gameObject.SetActive(true);
+        } else
+        {
+            dialogNextButton.gameObject.SetActive(true);
+
+            dialogOptionButton1.gameObject.SetActive(false);
+            dialogOptionButton2.gameObject.SetActive(false);
+            dialogOptionButton3.gameObject.SetActive(false);
+        }
+
+
 
         var charImage = LoadCharacterSprite(dialogLine);
         if (charImage == null)
