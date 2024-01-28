@@ -71,6 +71,7 @@ public class GameMaster : StaticReference<GameMaster>
 
     private GameState GetNextState()
     {
+        print($"GetNextState() => currentGameState: {currentGameState}, nextStateKey: {currentGameState.nextStateKey}");
         return gameStates.Find(element => element.key == currentGameState.nextStateKey);
     }
 
