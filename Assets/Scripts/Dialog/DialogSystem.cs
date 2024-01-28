@@ -74,15 +74,22 @@ public class DialogSystem : StaticReference<DialogSystem>
         ongoingDialog = true;
         playerControl.SetFreeze(true);
 
-        NextLine();
+        StartLine();
     }
 
     private void Fetch()
     {
-        dialogLines = new List<DialogData.DialogLine>();
+        //dialogLines = new List<DialogData.DialogLine>();
+        dialogLines = dialogData.lines;
     }
 
-    public void NextLine(string nextDialogLineKey = "")
+    public void StartLine()
+    {
+        currentDialogLine = dialogData.lines.Find(e => e.key == dialogData.initialLineKey);
+        Load(currentDialogLine);
+    }
+
+        public void NextLine(string nextDialogLineKey = "")
     {
         if (!ongoingDialog)
         {
@@ -90,12 +97,13 @@ public class DialogSystem : StaticReference<DialogSystem>
             return;
         }
 
-        if (dialogLines.Count > 0)
+        if(currentDialogLine.nextKey != "END")
         {
-            if(nextDialogLineKey == "")
+            if (nextDialogLineKey == "")
             {
                 currentDialogLine = dialogLines.Find(e => e.key == currentDialogLine.nextKey);
-            } else
+            }
+            else
             {
                 currentDialogLine = dialogLines.Find(e => e.key == nextDialogLineKey);
             }
@@ -105,8 +113,7 @@ public class DialogSystem : StaticReference<DialogSystem>
             //}
 
             Load(currentDialogLine);
-        }
-        else
+        } else
         {
             print("Dialog runs out!");
             ongoingDialog = false;
@@ -116,11 +123,47 @@ public class DialogSystem : StaticReference<DialogSystem>
             playerControl.SetFreeze(false);
 
             var informationKey = dialogData.informationKey;
-            if(informationKey != "none")
+            if (informationKey != "none" || informationKey != "")
             {
                 InformationSystem.Instance().AddInformation(dialogData.informationKey);
             }
+
+            dialogData = null;
         }
+
+
+
+        //if (dialogLines.Count > 0)
+        //{
+        //    if(nextDialogLineKey == "")
+        //    {
+        //        currentDialogLine = dialogLines.Find(e => e.key == currentDialogLine.nextKey);
+        //    } else
+        //    {
+        //        currentDialogLine = dialogLines.Find(e => e.key == nextDialogLineKey);
+        //    }
+        //    //if(!currentDialogLine)
+        //    //{
+        //    //    print("ERROR");
+        //    //}
+
+        //    Load(currentDialogLine);
+        //}
+        //else
+        //{
+        //    print("Dialog runs out!");
+        //    ongoingDialog = false;
+
+        //    Hide();
+
+        //    playerControl.SetFreeze(false);
+
+        //    var informationKey = dialogData.informationKey;
+        //    if(informationKey != "none" || informationKey != "")
+        //    {
+        //        InformationSystem.Instance().AddInformation(dialogData.informationKey);
+        //    }
+        //}
     }
 
     private void Load(DialogData.DialogLine dialogLine)

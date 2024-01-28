@@ -14,4 +14,9 @@ public class DialogInteraction : Interactable
     {
         DialogSystem.Instance().NextDialog(dialogData);
     }
+
+    public void SetDialogData(DialogData data)
+    {
+        dialogData = data;
+    }
 }

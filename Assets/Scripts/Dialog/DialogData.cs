@@ -33,4 +33,5 @@ public class DialogData : ScriptableObject
     public string dialogKey;
     public string informationKey;
     public List<DialogLine> lines;
+    public string initialLineKey;
 }
