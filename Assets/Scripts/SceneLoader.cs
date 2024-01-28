@@ -5,21 +5,9 @@ using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
-{
-    [Header("Key Inputs")]
-    [SerializeField] private KeyCode interactKey;
-    
+{  
     [SerializeField] public string nextScene;
     public Animator transition;
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKey(interactKey))
-        {
-            CallSceneChange();
-        }
-    }
 
     public void CallSceneChange()
     {

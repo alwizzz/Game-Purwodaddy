@@ -9,11 +9,28 @@ public class CutsceneManager : MonoBehaviour
     [Header("Key Inputs")]
     [SerializeField] private KeyCode nextKey;
     
-    [SerializeField] public GameObject cutScene1;
-    [SerializeField] public GameObject cutScene2;
-    [SerializeField] public GameObject cutScene3;
-    [SerializeField] public GameObject cutScene4;
-    [SerializeField] public GameObject cutScene5;
+    [Header("Cutscenes")]
+    [SerializeField] private GameObject cutScene1;
+    [SerializeField] private GameObject cutScene2;
+    [SerializeField] private GameObject cutScene3;
+    [SerializeField] private GameObject cutScene4;
+    [SerializeField] private GameObject cutScene5;
+    [SerializeField] private GameObject cutScene6;
+
+    [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource.PlayDelayed(0.7f);
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(nextKey))
+        {
+            sceneLoader.CallSceneChange();
+        }
+    }
 
     public void change_to_cutscene2()
     {
@@ -37,5 +54,11 @@ public class CutsceneManager : MonoBehaviour
     {
         cutScene5.SetActive(true);
         cutScene4.SetActive(false);
+    }
+
+    public void change_to_cutscene6()
+    {
+        cutScene6.SetActive(true);
+        cutScene5.SetActive(false);
     }
 }
