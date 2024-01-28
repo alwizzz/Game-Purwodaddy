@@ -1,0 +1,260 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
+  m_Name: act1-02-baskom1
+  m_EditorClassIdentifier: 
+  dialogKey: act1-02-baskom1
+  informationKey: Baskom-InfoWarung
+  lines:
+  - key: jamal1
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Misi dek, mau numpang tanya. Ini yang punya bengkel kemana ya?
+    nextKey: baskom1
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: baskom1
+    characterKey: Baskom
+    emotionKey: normal
+    onTheRight: 1
+    content: Gatau.
+    nextKey: jamal2
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal2
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Kalo gitu, yang punya bengkelnya adek tau namanya?
+    nextKey: baskom2
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: baskom2
+    characterKey: Baskom
+    emotionKey: normal
+    onTheRight: 1
+    content: Gatau.
+    nextKey: jamal3
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal3
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Adek rumahnya di mana? Ada ayah atau ibu di rumah?
+    nextKey: baskom3
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: baskom3
+    characterKey: Baskom
+    emotionKey: normal
+    onTheRight: 1
+    content: Ga.
+    nextKey: jamal4
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal4
+    characterKey: Jamal
+    emotionKey: bingung
+    onTheRight: 0
+    content: ( Buset dah ini bocah SPJ amat. )
+    nextKey: jamal5
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal5
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Kalo adek sendiri namanya siapa?
+    nextKey: baskom4
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: baskom4
+    characterKey: Baskom
+    emotionKey: normal
+    onTheRight: 1
+    content: Baskom.
+    nextKey: jamal6
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal6
+    characterKey: Jamal
+    emotionKey: bingung
+    onTheRight: 0
+    content: Hah Baskom? Itu nama atau <i>(INSERT JOKE HERE)</i>
+    nextKey: baskom5
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: baskom5
+    characterKey: Baskom
+    emotionKey: ketawa
+    onTheRight: 1
+    content: HahHAhhahHhahaHa
+    nextKey: jamal7
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal7
+    characterKey: Jamal
+    emotionKey: kaget
+    onTheRight: 0
+    content: ( Ketawa apaan itu anjir?! )
+    nextKey: baskom6
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: baskom6
+    characterKey: Baskom
+    emotionKey: senyum
+    onTheRight: 1
+    content: Iya kak Jamal, namaku Baskom. Soalnya ayahku namanya Baskoro dan ibuku
+      namanya Kokom. Ini bengkel punya ayahku, tadi sih sama ibu pergi ke warung
+      di sana, kakak tinggal <b>jalan lurus aja</b>
+    nextKey: jamal8
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal8
+    characterKey: Jamal
+    emotionKey: kaget
+    onTheRight: 0
+    content: ( Lah jadi baik begini ini anak. Terus kok dia tau nama gua? )
+    nextKey: jamal9
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal9
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: 'Oh iya dek. Makasih udah dikasih tau. '
+    nextKey: END
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  initialLineKey: jamal1
