@@ -11,7 +11,7 @@ public class InventorySystem : StaticReference<InventorySystem>
         BaseAwake(this);
     }
 
-    public void AddItem(string itemKey, string informationKey)
+    public void AddItem(string itemKey, string informationKey, bool bypassStateCheck = false)
     {
         if (HasItem(itemKey)) 
         { 
@@ -23,7 +23,10 @@ public class InventorySystem : StaticReference<InventorySystem>
         print($"INVENTORY: {itemKey} added to inventory");
         InventoryUI.Instance().UpdateShownItems(inventory);
 
-        InformationSystem.Instance().AddInformation(informationKey);
+        if(!bypassStateCheck)
+        {
+            InformationSystem.Instance().AddInformation(informationKey);
+        }
     }
 
     public bool HasItem(string itemKey)
@@ -31,7 +34,7 @@ public class InventorySystem : StaticReference<InventorySystem>
         return inventory.Contains(itemKey);
     }
 
-    public void RemoveItem(string itemKey, string informationKey)
+    public void RemoveItem(string itemKey, string informationKey, bool bypassStateCheck = false)
     {
         if (!HasItem(itemKey))
         {
@@ -43,7 +46,10 @@ public class InventorySystem : StaticReference<InventorySystem>
         print($"INVENTORY: {itemKey} removed from inventory");
         InventoryUI.Instance().UpdateShownItems(inventory);
 
-        InformationSystem.Instance().AddInformation(informationKey);
+        if (!bypassStateCheck)
+        {
+            InformationSystem.Instance().AddInformation(informationKey);
+        }
     }
 
 
