@@ -6,8 +6,8 @@ using UnityEngine.Rendering;
 
 public class CutsceneManager : MonoBehaviour
 {
-    //[Header("Key Inputs")]
-    //[SerializeField] private KeyCode nextKey;
+    [Header("Key Inputs")]
+    [SerializeField] private KeyCode nextKey;
     
     [Header("Cutscenes")]
     [SerializeField] private GameObject cutScene1;
@@ -17,11 +17,19 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject cutScene5;
     [SerializeField] private GameObject cutScene6;
 
+    [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioSource audioSource;
 
     void Start()
     {
         audioSource.PlayDelayed(0.7f);
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(nextKey))
+        {
+            sceneLoader.CallSceneChange();
+        }
     }
 
     public void change_to_cutscene2()
