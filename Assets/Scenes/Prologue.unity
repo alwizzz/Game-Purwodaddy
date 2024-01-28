@@ -375,7 +375,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6d1a5439547e85143a3b8aea49b25da8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -699,6 +699,7 @@ GameObject:
   - component: {fileID: 588984271}
   - component: {fileID: 588984275}
   - component: {fileID: 588984274}
+  - component: {fileID: 588984276}
   m_Layer: 5
   m_Name: Cutscene4
   m_TagString: Untagged
@@ -822,6 +823,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &588984276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588984269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa3165d5328c3f45bedcd49d912da4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneManager: {fileID: 1306638424}
+  sceneLoader: {fileID: 2122116535}
+  animate: {fileID: 588984275}
 --- !u!1 &1090294372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1119,7 @@ MonoBehaviour:
   cutScene5: {fileID: 1659536174}
   cutScene6: {fileID: 1833785324}
   sceneLoader: {fileID: 2122116535}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 140370829}
 --- !u!1 &1404193465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1437,7 @@ GameObject:
   - component: {fileID: 1659536177}
   - component: {fileID: 1659536176}
   - component: {fileID: 1659536175}
+  - component: {fileID: 1659536181}
   m_Layer: 5
   m_Name: Cutscene5
   m_TagString: Untagged
@@ -1450,7 +1467,7 @@ Animator:
   m_GameObject: {fileID: 1659536174}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d48f94f26228e594a96c402a0a5a977c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 33550596b2db7ff47bcd836f3e82f2f6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1544,6 +1561,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1659536181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659536174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa3165d5328c3f45bedcd49d912da4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneManager: {fileID: 1306638424}
+  sceneLoader: {fileID: 2122116535}
+  animate: {fileID: 1659536176}
 --- !u!1 &1833785324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1590,7 @@ GameObject:
   - component: {fileID: 1833785327}
   - component: {fileID: 1833785326}
   - component: {fileID: 1833785325}
+  - component: {fileID: 1833785331}
   m_Layer: 5
   m_Name: Cutscene6
   m_TagString: Untagged
@@ -1587,7 +1620,7 @@ Animator:
   m_GameObject: {fileID: 1833785324}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d48f94f26228e594a96c402a0a5a977c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 01826ea08b3326846a62dace704ca6af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1681,6 +1714,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1833785331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833785324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa3165d5328c3f45bedcd49d912da4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneManager: {fileID: 1306638424}
+  sceneLoader: {fileID: 2122116535}
+  animate: {fileID: 1833785326}
 --- !u!1 &1866856125
 GameObject:
   m_ObjectHideFlags: 0
