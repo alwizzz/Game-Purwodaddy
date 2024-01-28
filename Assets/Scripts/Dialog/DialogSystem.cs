@@ -66,6 +66,12 @@ public class DialogSystem : StaticReference<DialogSystem>
 
     public void NextDialog(DialogData data)
     {
+        if(data.dialogKey == "null")
+        {
+            print("Currently cant talk to " + gameObject);
+            return;
+        }
+
         dialogData = data;
         Fetch();
 

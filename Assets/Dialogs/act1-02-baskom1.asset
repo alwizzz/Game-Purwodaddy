@@ -163,7 +163,7 @@ MonoBehaviour:
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
-    content: Hah Baskom? Itu nama atau (INSERT JOKE HERE)
+    content: Hah Baskom? Itu nama atau <i>(INSERT JOKE HERE)</i>
     nextKey: baskom5
     conditionalDialog: 0
     dialogOption1:
@@ -195,7 +195,7 @@ MonoBehaviour:
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
-    content: ( Ketawa apaan itu anjir ?! )
+    content: ( Ketawa apaan itu anjir?! )
     nextKey: baskom6
     conditionalDialog: 0
     dialogOption1:
@@ -211,9 +211,9 @@ MonoBehaviour:
     characterKey: Baskom
     emotionKey: senyum
     onTheRight: 1
-    content: Iya kak Jamal (FORESHADOW - langsung tau nama), namaku Baskom. Soalnya
-      ayahku namanya Baskoro dan ibuku namanya Kokom. Ini bengkel punya ayahku, tadi
-      sih sama ibu pergi ke warung <i>di sana</i>
+    content: Iya kak Jamal, namaku Baskom. Soalnya ayahku namanya Baskoro dan ibuku
+      namanya Kokom. Ini bengkel punya ayahku, tadi sih sama ibu pergi ke warung
+      <i>di sana</i>
     nextKey: jamal8
     conditionalDialog: 0
     dialogOption1:
@@ -227,10 +227,25 @@ MonoBehaviour:
       nextKey: 
   - key: jamal8
     characterKey: Jamal
+    emotionKey: kaget
+    onTheRight: 0
+    content: ( Lah jadi baik begini ini anak. Terus kok dia tau nama gua? )
+    nextKey: jamal9
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal9
+    characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
-    content: Oh iya dek. Makasih udah dikasih tau. ( Lah jadi baik begini ini anak
-      )
+    content: 'Oh iya dek. Makasih udah dikasih tau. '
     nextKey: END
     conditionalDialog: 0
     dialogOption1:
