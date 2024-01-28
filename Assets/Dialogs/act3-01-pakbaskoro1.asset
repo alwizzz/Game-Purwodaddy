@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
-  m_Name: act1-02-baskom1
+  m_Name: act3-01-pakbaskoro1
   m_EditorClassIdentifier: 
-  dialogKey: act1-02-baskom1
-  informationKey: Baskom-InfoWarung
+  dialogKey: act2-02-bukokom2
+  informationKey: PakBaskoro-Kabur
   lines:
-  - key: jamal1
-    characterKey: Jamal
+  - key: pakbaskoro1
+    characterKey: PakBaskoro
     emotionKey: normal
-    onTheRight: 0
-    content: Misi dek, mau numpang tanya. Ini yang punya bengkel kemana ya?
-    nextKey: baskom1
+    onTheRight: 1
+    content: Saya sudah menunggu kamu, Jamal.
+    nextKey: jamal1
     conditionalDialog: 0
     dialogOption1:
       content: 
@@ -31,11 +31,27 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  - key: baskom1
-    characterKey: Baskom
-    emotionKey: normal
+  - key: jamal1
+    characterKey: Jamal
+    emotionKey: kaget
+    onTheRight: 0
+    content: ( Hah?! Lagi lagi orang sini langsung tau nama gua?! )
+    nextKey: pakbaskoro2
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: pakbaskoro2
+    characterKey: PakBaskoro
+    emotionKey: senyum
     onTheRight: 1
-    content: Gatau.
+    content: Kamu juga sudah bawakan saya Nasi Bungkus kutukan itu. Kerja bagus
     nextKey: jamal2
     conditionalDialog: 0
     dialogOption1:
@@ -49,10 +65,10 @@ MonoBehaviour:
       nextKey: 
   - key: jamal2
     characterKey: Jamal
-    emotionKey: normal
+    emotionKey: kaget
     onTheRight: 0
-    content: Kalo gitu, yang punya bengkelnya adek tau namanya?
-    nextKey: baskom2
+    content: Hah kutukan? Eh ehh pak jangan asal rebut makanan saya gitu dong!
+    nextKey: pakbaskoro3
     conditionalDialog: 0
     dialogOption1:
       content: 
@@ -63,11 +79,11 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  - key: baskom2
-    characterKey: Baskom
+  - key: pakbaskoro3
+    characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
-    content: Gatau.
+    content: Kamu masih belum melek to, Mal?.
     nextKey: jamal3
     conditionalDialog: 0
     dialogOption1:
@@ -81,10 +97,10 @@ MonoBehaviour:
       nextKey: 
   - key: jamal3
     characterKey: Jamal
-    emotionKey: normal
+    emotionKey: bingung
     onTheRight: 0
-    content: Adek rumahnya di mana? Ada ayah atau ibu di rumah?
-    nextKey: baskom3
+    content: Maksudnya gimana pak?
+    nextKey: pakbaskoro4
     conditionalDialog: 0
     dialogOption1:
       content: 
@@ -95,12 +111,12 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  - key: baskom3
-    characterKey: Baskom
+  - key: pakbaskoro4
+    characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
-    content: Ga.
-    nextKey: jamal4
+    content: Sekarang coba jawab saya. Kota, kota apa yang banyak bapak-bapaknya?
+    nextKey: jamal4-conditional
     conditionalDialog: 0
     dialogOption1:
       content: 
@@ -111,11 +127,79 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  - key: jamal4
+  - key: jamal4-conditional
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
-    content: ( Buset dah ini bocah SPJ amat. )
+    content: Kota yang banyak bapak-bapaknya.. hmmm
+    nextKey: 
+    conditionalDialog: 1
+    dialogOption1:
+      content: Bogor
+      nextKey: pakbaskoro-false
+    dialogOption2:
+      content: Bangladesh
+      nextKey: pakbaskoro-false
+    dialogOption3:
+      content: Purwodaddy
+      nextKey: pakbaskoro-true
+  - key: pakbaskoro-false
+    characterKey: PakBaskoro
+    emotionKey: senyum
+    onTheRight: 1
+    content: Affh Iyyh
+    nextKey: jamal4-conditional
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: pakbaskoro-true
+    characterKey: PakBaskoro
+    emotionKey: ketawa
+    onTheRight: 1
+    content: Xixixi
+    nextKey: pakbaskoro5
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: pakbaskoro5
+    characterKey: PakBaskoro
+    emotionKey: ketawa
+    onTheRight: 1
+    content: 'Xixixi xixixixix OHKKHOKK... xixixixxixixixi '
+    nextKey: pakbaskoro6
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: pakbaskoro6
+    characterKey: PakBaskoro
+    emotionKey: ketawa
+    onTheRight: 1
+    content: XIXIXIXIXI XIXIXIXIXIXIXXIX XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX
+      XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX
+      XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX
+      XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX XIXIXIXIXXIX XIXIXIXIXI XIXIXIXIXIXIXXIX
+      XIXIXIXIXXIX
     nextKey: jamal5
     conditionalDialog: 0
     dialogOption1:
@@ -129,10 +213,10 @@ MonoBehaviour:
       nextKey: 
   - key: jamal5
     characterKey: Jamal
-    emotionKey: normal
+    emotionKey: bingung
     onTheRight: 0
-    content: Kalo adek sendiri namanya siapa?
-    nextKey: baskom4
+    content: Ha ha ha...
+    nextKey: pakbaskoro7
     conditionalDialog: 0
     dialogOption1:
       content: 
@@ -143,11 +227,12 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  - key: baskom4
-    characterKey: Baskom
-    emotionKey: normal
+  - key: pakbaskoro7
+    characterKey: PakBaskoro
+    emotionKey: ketawa
     onTheRight: 1
-    content: Baskom.
+    content: XXIXIXIXII... Ini, pegangan buat kamu. Semoga xixixixxi, mereka ikhlasin
+      kamu xixixixix... PERGI!!!
     nextKey: jamal6
     conditionalDialog: 0
     dialogOption1:
@@ -161,91 +246,9 @@ MonoBehaviour:
       nextKey: 
   - key: jamal6
     characterKey: Jamal
-    emotionKey: bingung
-    onTheRight: 0
-    content: Hah Baskom? Itu nama atau <i>(INSERT JOKE HERE)</i>
-    nextKey: baskom5
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: baskom5
-    characterKey: Baskom
-    emotionKey: ketawa
-    onTheRight: 1
-    content: HahHAhhahHhahaHa
-    nextKey: jamal7
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: jamal7
-    characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
-    content: ( Ketawa apaan itu anjir?! )
-    nextKey: baskom6
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: baskom6
-    characterKey: Baskom
-    emotionKey: senyum
-    onTheRight: 1
-    content: Iya kak Jamal, namaku Baskom. Soalnya ayahku namanya Baskoro dan ibuku
-      namanya Kokom. Ini bengkel punya ayahku, tadi sih sama ibu pergi ke warung
-      di sana, kakak tinggal <b>jalan lurus aja</b>
-    nextKey: jamal8
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: jamal8
-    characterKey: Jamal
-    emotionKey: kaget
-    onTheRight: 0
-    content: ( Lah jadi baik begini ini anak. Terus kok dia tau nama gua? )
-    nextKey: jamal9
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: jamal9
-    characterKey: Jamal
-    emotionKey: normal
-    onTheRight: 0
-    content: 'Oh iya dek. Makasih udah dikasih tau. '
+    content: ( Banyak yang ga beres. Gua harus buruan pergi dari sini! )
     nextKey: END
     conditionalDialog: 0
     dialogOption1:
@@ -257,4 +260,4 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  initialLineKey: jamal1
+  initialLineKey: pakbaskoro1
