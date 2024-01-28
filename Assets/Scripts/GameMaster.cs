@@ -16,9 +16,9 @@ public class GameMaster : StaticReference<GameMaster>
         public string nextStateKey;
     }
 
+    [SerializeField] private GameState currentGameState;
     [SerializeField] private List<GameState> gameStates;
     [SerializeField] private string initialGameStateKey;
-    [SerializeField] private GameState currentGameState;
 
     private void Awake()
     {

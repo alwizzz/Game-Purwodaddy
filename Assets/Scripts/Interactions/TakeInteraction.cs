@@ -5,6 +5,8 @@ using UnityEngine;
 public class TakeInteraction : Interactable
 {
     [SerializeField] private string itemKey;
+    [SerializeField] private string informationKey;
+
 
     public override void Interact()
     {
@@ -13,8 +15,8 @@ public class TakeInteraction : Interactable
 
     private void Take()
     {
-        //InventorySystem.Instance().AddItem(itemKey);
-        InformationSystem.Instance().AddInformation(itemKey);
+        InventorySystem.Instance().AddItem(itemKey, informationKey);
+        //InformationSystem.Instance().AddInformation(itemKey);
         Destroy(gameObject);
     }
 }
