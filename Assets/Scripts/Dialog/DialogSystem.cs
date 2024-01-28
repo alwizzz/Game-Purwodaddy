@@ -113,10 +113,7 @@ public class DialogSystem : StaticReference<DialogSystem>
             {
                 currentDialogLine = dialogLines.Find(e => e.key == nextDialogLineKey);
             }
-            //if(!currentDialogLine)
-            //{
-            //    print("ERROR");
-            //}
+            
 
             Load(currentDialogLine);
         } else
@@ -136,40 +133,6 @@ public class DialogSystem : StaticReference<DialogSystem>
 
             dialogData = null;
         }
-
-
-
-        //if (dialogLines.Count > 0)
-        //{
-        //    if(nextDialogLineKey == "")
-        //    {
-        //        currentDialogLine = dialogLines.Find(e => e.key == currentDialogLine.nextKey);
-        //    } else
-        //    {
-        //        currentDialogLine = dialogLines.Find(e => e.key == nextDialogLineKey);
-        //    }
-        //    //if(!currentDialogLine)
-        //    //{
-        //    //    print("ERROR");
-        //    //}
-
-        //    Load(currentDialogLine);
-        //}
-        //else
-        //{
-        //    print("Dialog runs out!");
-        //    ongoingDialog = false;
-
-        //    Hide();
-
-        //    playerControl.SetFreeze(false);
-
-        //    var informationKey = dialogData.informationKey;
-        //    if(informationKey != "none" || informationKey != "")
-        //    {
-        //        InformationSystem.Instance().AddInformation(dialogData.informationKey);
-        //    }
-        //}
     }
 
     private void Load(DialogData.DialogLine dialogLine)
@@ -218,6 +181,10 @@ public class DialogSystem : StaticReference<DialogSystem>
         }
 
         SetupDialogCharacter(dialogLine, charImage);
+        if(dialogLine.useLaughSoundEffect)
+        {
+            SoundEffectManager.Instance().PlayLaughSoundEffect();
+        }    
     }
 
     private Sprite LoadCharacterSprite(DialogData.DialogLine dialogLine)

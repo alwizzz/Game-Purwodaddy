@@ -16,6 +16,7 @@ MonoBehaviour:
   informationKey: BuKokom-CariPakBaskoro
   lines:
   - key: jamal1
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
@@ -32,6 +33,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: bukokom1
+    useLaughSoundEffect: 0
     characterKey: BuKokom
     emotionKey: normal
     onTheRight: 1
@@ -48,6 +50,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: bukokom2
+    useLaughSoundEffect: 1
     characterKey: BuKokom
     emotionKey: ketawa
     onTheRight: 1
@@ -64,6 +67,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: bukokom3
+    useLaughSoundEffect: 1
     characterKey: BuKokom
     emotionKey: ketawa
     onTheRight: 1
@@ -80,6 +84,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal2
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -96,6 +101,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: bukokom4
+    useLaughSoundEffect: 0
     characterKey: BuKokom
     emotionKey: normal
     onTheRight: 1
@@ -113,6 +119,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: bukokom5
+    useLaughSoundEffect: 0
     characterKey: BuKokom
     emotionKey: normal
     onTheRight: 1
@@ -130,6 +137,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal3
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
