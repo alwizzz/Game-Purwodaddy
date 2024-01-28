@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ExitTrigger : MonoBehaviour
 {
@@ -14,6 +16,6 @@ public class ExitTrigger : MonoBehaviour
 
     private void Ending()
     {
-
+        SceneManager.LoadScene("Epilogue");
     }
 }

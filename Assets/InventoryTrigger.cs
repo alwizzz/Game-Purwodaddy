@@ -7,15 +7,16 @@ public class InventoryTrigger : MonoBehaviour
     [SerializeField] private string itemKey;
     [SerializeField] private string informationKey;
     [SerializeField] private bool isAdding;
+    [SerializeField] private bool bypassStateCheck;
 
     public void Trigger()
     { 
         if(isAdding)
         {
-            InventorySystem.Instance().AddItem(itemKey, informationKey);
+            InventorySystem.Instance().AddItem(itemKey, informationKey, bypassStateCheck);
         } else
         {
-            InventorySystem.Instance().RemoveItem(itemKey, informationKey);
+            InventorySystem.Instance().RemoveItem(itemKey, informationKey, bypassStateCheck);
         }
     }
 }
