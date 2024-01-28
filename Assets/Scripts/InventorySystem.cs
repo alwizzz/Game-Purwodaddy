@@ -11,7 +11,7 @@ public class InventorySystem : StaticReference<InventorySystem>
         BaseAwake(this);
     }
 
-    public void AddItem(string itemKey)
+    public void AddItem(string itemKey, string informationKey)
     {
         if (HasItem(itemKey)) 
         { 
@@ -21,6 +21,8 @@ public class InventorySystem : StaticReference<InventorySystem>
 
         inventory.Add(itemKey);
         print($"INVENTORY: {itemKey} added to inventory");
+
+        InformationSystem.Instance().AddInformation(informationKey);
     }
 
     public bool HasItem(string itemKey)
