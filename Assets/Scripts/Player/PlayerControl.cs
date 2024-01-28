@@ -25,6 +25,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private bool isWalking;
 
+    [SerializeField] private AudioSource audioSource;
+
 
     private void Update()
     {
@@ -43,6 +45,7 @@ public class PlayerControl : MonoBehaviour
         if (moveLeft == moveRight) 
         {
             animator.SetBool("isWalking", false);
+            audioSource.Stop();
             return; 
         }
 
@@ -54,6 +57,11 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(Vector2.left * moveSpeed * neutralizer * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, -180, 0);
             FlipModel(true);
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
         else if (moveRight)
         {
@@ -61,6 +69,11 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(Vector2.right * moveSpeed * neutralizer * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, 0, 0);
             FlipModel(false);
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
         else { print("ERROR"); }
     }
