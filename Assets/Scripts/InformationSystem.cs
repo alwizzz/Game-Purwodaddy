@@ -21,6 +21,8 @@ public class InformationSystem : StaticReference<InformationSystem>
 
         informations.Add(informationKey);
         print($"INFORMATION: {informationKey} added to informations");
+
+        GameMaster.Instance().TryProgressState();
     }
 
     public bool HasInformation(string informationKey)
