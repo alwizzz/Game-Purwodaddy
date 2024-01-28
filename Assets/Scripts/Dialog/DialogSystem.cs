@@ -123,7 +123,7 @@ public class DialogSystem : StaticReference<DialogSystem>
             playerControl.SetFreeze(false);
 
             var informationKey = dialogData.informationKey;
-            if (informationKey != "none" || informationKey != "")
+            if (informationKey != "none" && informationKey != "")
             {
                 InformationSystem.Instance().AddInformation(dialogData.informationKey);
             }

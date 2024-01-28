@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
-  m_Name: act1-monolog1
+  m_Name: act1-01-monolog1
   m_EditorClassIdentifier: 
   dialogKey: act1-monolog1
   informationKey: none
@@ -35,8 +35,8 @@ MonoBehaviour:
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
-    content: ( Ini bener bengkel yang diarahin kakek yang tadi? Kok keliatannya tutup
-      yak. )
+    content: ( Ini bener bengkel yang diarahin kakek yang tadi? Kok gaada orang yak.
+      )
     nextKey: jamal3
     conditionalDialog: 0
     dialogOption1:
