@@ -25,6 +25,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private bool isWalking;
 
+    [Header("SoundEffect")]
+    [SerializeField] private AudioSource footsteps;
+
 
     private void Update()
     {
@@ -43,6 +46,7 @@ public class PlayerControl : MonoBehaviour
         if (moveLeft == moveRight) 
         {
             animator.SetBool("isWalking", false);
+            footsteps.Stop();
             return; 
         }
 
@@ -54,6 +58,12 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(Vector2.left * moveSpeed * neutralizer * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, -180, 0);
             FlipModel(true);
+            
+            //Check if Footsteps isPlaying
+            if(footsteps.isPlaying != true)
+            {
+                footsteps.Play();
+            }
         }
         else if (moveRight)
         {
@@ -61,6 +71,12 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(Vector2.right * moveSpeed * neutralizer * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, 0, 0);
             FlipModel(false);
+
+            //Check if Footsteps isPlaying
+            if(footsteps.isPlaying != true)
+            {
+                footsteps.Play();
+            }
         }
         else { print("ERROR"); }
     }
