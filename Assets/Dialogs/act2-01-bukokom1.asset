@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
+  m_Name: act2-01-bukokom1
+  m_EditorClassIdentifier: 
+  dialogKey: act2-01-bukokom1
+  informationKey: BuKokom-CariKeranjang
+  lines:
+  - key: jamal1
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Permisi, bu. Ini benar Ibu Kokom?
+    nextKey: bukokom1
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: bukokom1
+    characterKey: BuKokom
+    emotionKey: normal
+    onTheRight: 1
+    content: Betul mas ganteng. Ada perlu apa?
+    nextKey: jamal2
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal2
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Motor saya mogok bu. Saya udah dorong motor saya ke bengkel ibu tapi
+      ngga ada orang. Oh ya, saya juga tadi ketemu dengan anak ibu, Baskom.
+    nextKey: bukokom2
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: bukokom2
+    characterKey: BuKokom
+    emotionKey: normal
+    onTheRight: 1
+    content: Oh ya anak saya Baskom. Masnya tertarik ngga ajarin anak saya biar jadi
+      laki laki ganteng kayak mas? Tinggal di sini juga boleh loh.
+    nextKey: bukokom3
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: bukokom3
+    characterKey: BuKokom
+    emotionKey: ketawa
+    onTheRight: 1
+    content: Khhakk Khhkhahkhk
+    nextKey: jamal3
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal3
+    characterKey: Jamal
+    emotionKey: bingung
+    onTheRight: 0
+    content: ( Apaan si ni ibu ibu )
+    nextKey: jamal4
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal4
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Ngga dulu deh bu, soalnya saya lagi buru-buru. Saya juga cape sehabis
+      dari perjalanan jauh
+    nextKey: bukokom4
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: bukokom4
+    characterKey: BuKokom
+    emotionKey: bingung
+    onTheRight: 1
+    content: Ya ngga apa apa. Tapi ibu boleh minta tolong dulu ke mas Jamal? Daritadi
+      ibu sedang cari <b>keranjang</b> ibu buat belanja tapi belum ketemu. Tolong
+      carikan ya mas, nanti saya bantu mas ganteng.
+    nextKey: jamal5
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal5
+    characterKey: Jamal
+    emotionKey: normal
+    onTheRight: 0
+    content: Oke bu siap saya carikan
+    nextKey: END
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  initialLineKey: jamal1

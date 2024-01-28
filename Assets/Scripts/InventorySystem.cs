@@ -21,6 +21,7 @@ public class InventorySystem : StaticReference<InventorySystem>
 
         inventory.Add(itemKey);
         print($"INVENTORY: {itemKey} added to inventory");
+        InventoryUI.Instance().UpdateShownItems(inventory);
 
         InformationSystem.Instance().AddInformation(informationKey);
     }
@@ -30,10 +31,19 @@ public class InventorySystem : StaticReference<InventorySystem>
         return inventory.Contains(itemKey);
     }
 
-    public void RemoveItem(string itemKey)
+    public void RemoveItem(string itemKey, string informationKey)
     {
+        if (!HasItem(itemKey))
+        {
+            print($"INVENTORY: not found ({itemKey})");
+            return;
+        }
+
         inventory.Remove(itemKey);
         print($"INVENTORY: {itemKey} removed from inventory");
+        InventoryUI.Instance().UpdateShownItems(inventory);
+
+        InformationSystem.Instance().AddInformation(informationKey);
     }
 
 
