@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 172464940}
   - component: {fileID: 172464943}
   - component: {fileID: 172464944}
+  - component: {fileID: 172464945}
   m_Layer: 5
   m_Name: Cutscene5
   m_TagString: Untagged
@@ -249,7 +250,7 @@ Animator:
   m_GameObject: {fileID: 172464938}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 33550596b2db7ff47bcd836f3e82f2f6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1902d04179d614248b6d74f4e40da6a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -260,6 +261,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &172464945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172464938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa3165d5328c3f45bedcd49d912da4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneManager: {fileID: 1882650527}
+  sceneLoader: {fileID: 566625997}
+  animate: {fileID: 172464944}
 --- !u!1 &335934554
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneManager: {fileID: 1882650527}
+  sceneLoader: {fileID: 566625997}
   animate: {fileID: 345404370}
 --- !u!1 &442145851
 GameObject:
@@ -631,7 +648,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneManager: {fileID: 1882650527}
+  sceneLoader: {fileID: 566625997}
   animate: {fileID: 442145853}
+--- !u!114 &566625997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2260650280343044190, guid: 839710e56cf54ae46b2a36c3cf85c45a, type: 3}
+  m_PrefabInstance: {fileID: 1415184824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153ba4a4974835c40b8dd0a96cc9e016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &582886011
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3da7ba96dc0d1fc479f3e229b1793863, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e03cbd0a34244a1478bc8feb326628f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -834,7 +863,7 @@ Animator:
   m_GameObject: {fileID: 649016174}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4e971ca7c906bfa4187955ec49d9fac5, type: 2}
+  m_Controller: {fileID: 9100000, guid: d48f94f26228e594a96c402a0a5a977c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -858,6 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneManager: {fileID: 1882650527}
+  sceneLoader: {fileID: 566625997}
   animate: {fileID: 649016180}
 --- !u!1 &728341358
 GameObject:
@@ -1008,7 +1038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 922a336ae150a9f43a1d5768531762db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8b559a2aacddc54e83e0c2be3b61901, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1083,7 +1113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3408982fe8780084da27f9f3cd72bf6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ae3321c00398bc4ea19e15fafaba739, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1158,7 +1188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f77f9139b698b9c4a8b81ffa1db74796, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76c36b2776618204b9136d92520566cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1233,7 +1263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ab28a3039011e4e4fb221dc993343ca7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5f5bace539cf964e978ed7df7f956f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1476,6 +1506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneManager: {fileID: 1882650527}
+  sceneLoader: {fileID: 566625997}
   animate: {fileID: 1846264328}
 --- !u!1 &1882650522
 GameObject:
@@ -1596,12 +1627,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874416c8bae62684a95143c00201843c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextKey: 32
   cutScene1: {fileID: 442145851}
   cutScene2: {fileID: 1846264323}
   cutScene3: {fileID: 345404365}
   cutScene4: {fileID: 649016174}
   cutScene5: {fileID: 172464938}
+  cutScene6: {fileID: 442145851}
+  audioSource: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
