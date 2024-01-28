@@ -16,6 +16,7 @@ MonoBehaviour:
   informationKey: Baskom-InfoWarung
   lines:
   - key: jamal1
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
@@ -32,6 +33,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: baskom1
+    useLaughSoundEffect: 0
     characterKey: Baskom
     emotionKey: normal
     onTheRight: 1
@@ -48,6 +50,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal2
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
@@ -64,6 +67,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: baskom2
+    useLaughSoundEffect: 0
     characterKey: Baskom
     emotionKey: normal
     onTheRight: 1
@@ -80,6 +84,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal3
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
@@ -96,6 +101,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: baskom3
+    useLaughSoundEffect: 0
     characterKey: Baskom
     emotionKey: normal
     onTheRight: 1
@@ -112,6 +118,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal4
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -128,6 +135,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal5
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
@@ -144,6 +152,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: baskom4
+    useLaughSoundEffect: 0
     characterKey: Baskom
     emotionKey: normal
     onTheRight: 1
@@ -160,6 +169,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal6
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -176,6 +186,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: baskom5
+    useLaughSoundEffect: 1
     characterKey: Baskom
     emotionKey: ketawa
     onTheRight: 1
@@ -192,6 +203,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal7
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -208,6 +220,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: baskom6
+    useLaughSoundEffect: 0
     characterKey: Baskom
     emotionKey: senyum
     onTheRight: 1
@@ -226,6 +239,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal8
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -242,6 +256,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal9
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0

@@ -35,8 +35,7 @@ MonoBehaviour:
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
-    content: ( Ini bener bengkel yang diarahin kakek yang tadi? Kok gaada orang yak.
-      )
+    content: (Ini bener bengkel yang diarahin kakek yang tadi? Kok gaada orang yak.)
     nextKey: jamal3
     conditionalDialog: 0
     dialogOption1:

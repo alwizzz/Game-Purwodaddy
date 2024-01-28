@@ -16,6 +16,7 @@ MonoBehaviour:
   informationKey: PakBaskoro-Kabur
   lines:
   - key: pakbaskoro1
+    useLaughSoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
@@ -32,6 +33,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal1
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -48,6 +50,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro2
+    useLaughSoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: senyum
     onTheRight: 1
@@ -64,6 +67,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal2
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -80,6 +84,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro3
+    useLaughSoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
@@ -96,6 +101,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal3
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -112,6 +118,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro4
+    useLaughSoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
@@ -128,6 +135,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal4-conditional
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -144,6 +152,7 @@ MonoBehaviour:
       content: Purwodaddy
       nextKey: pakbaskoro-true
   - key: pakbaskoro-false
+    useLaughSoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: senyum
     onTheRight: 1
@@ -160,6 +169,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro-true
+    useLaughSoundEffect: 1
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -176,6 +186,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro5
+    useLaughSoundEffect: 1
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -192,6 +203,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro6
+    useLaughSoundEffect: 1
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -212,6 +224,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal5
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -228,6 +241,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: pakbaskoro7
+    useLaughSoundEffect: 1
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -245,6 +259,7 @@ MonoBehaviour:
       content: 
       nextKey: 
   - key: jamal6
+    useLaughSoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
