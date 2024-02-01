@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : StaticReference<PlayerControl>
 {
+    [SerializeField] private bool playedOnPC;
     [SerializeField] private bool freeze;
 
     [Header("Key Inputs")]
     [SerializeField] private KeyCode leftKey;
     [SerializeField] private KeyCode rightKey;
     [SerializeField] private KeyCode interactKey;
-    [SerializeField] private KeyCode pauseKey;
+    [SerializeField] private KeyCode dialogKey;
 
     [Header("Parameters")]
     [SerializeField] private float moveSpeed;
@@ -20,6 +21,11 @@ public class PlayerControl : MonoBehaviour
     [Header("Caches")]
     [SerializeField] private SpriteRenderer model;
     [SerializeField] private PlayerSensor sensor;
+    [SerializeField] private AdvancedButtonUI leftVirtualButton;
+    [SerializeField] private AdvancedButtonUI rightVirtualButton;
+    [SerializeField] private AdvancedButtonUI interactVirtualButton;
+
+
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
@@ -27,19 +33,40 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
+    private void Awake()
+    {
+        BaseAwake(this);
+
+        // browser and mobile use the same input: button
+        //playedOnPC = (Application.isMobilePlatform ? false : true);
+        playedOnPC = true;
+    }
+
 
     private void Update()
     {
+        ProcessInteractInput();
+
         if (freeze) { return; }
 
-        ProcessInteractInput();
         ProcessPlayerInput();
     }
 
     private void ProcessPlayerInput()
     {
-        bool moveLeft = Input.GetKey(leftKey);
-        bool moveRight = Input.GetKey(rightKey);
+        bool moveLeft;
+        bool moveRight;
+
+        if(playedOnPC)
+        {
+            moveLeft = Input.GetKey(leftKey);
+            moveRight = Input.GetKey(rightKey);
+        } else
+        {
+            moveLeft = leftVirtualButton.IsButtonDown();
+            moveRight = rightVirtualButton.IsButtonDown();
+        }
+
 
         // do nothing if either player not pushing any button or pushing both button
         if (moveLeft == moveRight) 
@@ -80,14 +107,24 @@ public class PlayerControl : MonoBehaviour
 
     private void ProcessInteractInput()
     {
-        bool interact = Input.GetKeyDown(interactKey);
+        bool interact;
+
+        if(playedOnPC)
+        {
+            interact = Input.GetKeyDown(interactKey);
+        } else
+        {
+            interact = interactVirtualButton.IsButtonDown();
+        } 
+
 
         if(interact)
         {
-            if(sensor.InteractableDetected())
+            if (sensor.InteractableDetected())
             {
                 sensor.Interact();
-            } else
+            }
+            else
             {
                 print("attempt to interact when there is no interactable nearby");
             }
@@ -114,5 +151,11 @@ public class PlayerControl : MonoBehaviour
     { 
         freeze = value;
         animator.SetBool("isWalking", (freeze ? false : true));
+    }
+
+
+    private void OnDestroy()
+    {
+        BaseOnDestroy();
     }
 }
