@@ -4791,7 +4791,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 83104f2cc2054be46aa6dbd429a1c2ce, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 338fb19ca46fda14098b6c1992f9ca65, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
@@ -6739,6 +6739,10 @@ PrefabInstance:
       propertyPath: dialogVirtualButton
       value: 
       objectReference: {fileID: 1572501799}
+    - target: {fileID: 8737049857549859931, guid: 8c1d70801b2e9b941b78e88278f1a0f2, type: 3}
+      propertyPath: footstepAudioSource
+      value: 
+      objectReference: {fileID: 1892869407}
     - target: {fileID: 8737049857549859931, guid: 8c1d70801b2e9b941b78e88278f1a0f2, type: 3}
       propertyPath: interactVirtualButton
       value: 

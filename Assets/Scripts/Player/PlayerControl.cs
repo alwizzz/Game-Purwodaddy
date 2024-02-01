@@ -25,13 +25,13 @@ public class PlayerControl : StaticReference<PlayerControl>
     [SerializeField] private AdvancedButtonUI rightVirtualButton;
 
     [SerializeField] private GameObject virtualButtons;
+    [SerializeField] private AudioSource footstepAudioSource;
 
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
     [SerializeField] private bool isWalking;
 
-    [SerializeField] private AudioSource audioSource;
 
     private void Awake()
     {
@@ -48,7 +48,9 @@ public class PlayerControl : StaticReference<PlayerControl>
     private void Update()
     {
         if (freeze) 
-        { 
+        {
+            footstepAudioSource.Stop(); // bad practice
+
             if(playedOnPC)
             {
                 ProcessDialogInputByKeyboard();
@@ -99,7 +101,7 @@ public class PlayerControl : StaticReference<PlayerControl>
         if (moveLeft == moveRight) 
         {
             animator.SetBool("isWalking", false);
-            audioSource.Stop();
+            footstepAudioSource.Stop();
             return; 
         }
 
@@ -112,9 +114,9 @@ public class PlayerControl : StaticReference<PlayerControl>
             //transform.rotation = Quaternion.Euler(0, -180, 0);
             FlipModel(true);
 
-            if (!audioSource.isPlaying)
+            if (!footstepAudioSource.isPlaying)
             {
-                audioSource.Play();
+                footstepAudioSource.Play();
             }
         }
         else if (moveRight)
@@ -124,9 +126,9 @@ public class PlayerControl : StaticReference<PlayerControl>
             //transform.rotation = Quaternion.Euler(0, 0, 0);
             FlipModel(false);
 
-            if (!audioSource.isPlaying)
+            if (!footstepAudioSource.isPlaying)
             {
-                audioSource.Play();
+                footstepAudioSource.Play();
             }
         }
         else { print("ERROR"); }
@@ -181,6 +183,11 @@ public class PlayerControl : StaticReference<PlayerControl>
     { 
         freeze = value;
         animator.SetBool("isWalking", (freeze ? false : true));
+
+        if(value == true)
+        {
+            footstepAudioSource.Stop();
+        }
     }
 
 
