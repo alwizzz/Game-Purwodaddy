@@ -34,7 +34,9 @@ public class DialogSystem : StaticReference<DialogSystem>
     [SerializeField] private Image characterImageRight;
     [SerializeField] private PlayerControl playerControl;
 
-    [SerializeField] private Button dialogNextButton;
+    [SerializeField] private Button imageDialogBox;
+    [SerializeField] private GameObject dialogInstructionText;
+
     [SerializeField] private Button dialogOptionButton1;
     [SerializeField] private Button dialogOptionButton2;
     [SerializeField] private Button dialogOptionButton3;
@@ -143,7 +145,9 @@ public class DialogSystem : StaticReference<DialogSystem>
         var conditionalDialog = dialogLine.conditionalDialog;
         if (conditionalDialog)
         {
-            dialogNextButton.gameObject.SetActive(false);
+            //dialogNextButton.gameObject.SetActive(false);
+            imageDialogBox.interactable = false;
+            dialogInstructionText.SetActive(false);
             
             dialogOptionButton1.onClick.AddListener(
                 () => NextLine(dialogLine.dialogOption1.nextKey)
@@ -164,7 +168,9 @@ public class DialogSystem : StaticReference<DialogSystem>
             dialogOptionButton3.gameObject.SetActive(true);
         } else
         {
-            dialogNextButton.gameObject.SetActive(true);
+            //dialogNextButton.gameObject.SetActive(true);
+            imageDialogBox.interactable = true;
+            dialogInstructionText.SetActive(true);
 
             dialogOptionButton1.gameObject.SetActive(false);
             dialogOptionButton2.gameObject.SetActive(false);

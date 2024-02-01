@@ -23,8 +23,8 @@ public class PlayerControl : StaticReference<PlayerControl>
     [SerializeField] private PlayerSensor sensor;
     [SerializeField] private AdvancedButtonUI leftVirtualButton;
     [SerializeField] private AdvancedButtonUI rightVirtualButton;
-    [SerializeField] private AdvancedButtonUI interactVirtualButton;
 
+    [SerializeField] private GameObject virtualButtons;
 
 
     [Header("Animator")]
@@ -40,16 +40,43 @@ public class PlayerControl : StaticReference<PlayerControl>
         // browser and mobile use the same input: button
         //playedOnPC = (Application.isMobilePlatform ? false : true);
         playedOnPC = true;
+
+        virtualButtons.SetActive((playedOnPC ? false : true));
     }
 
 
     private void Update()
     {
+        if (freeze) 
+        { 
+            if(playedOnPC)
+            {
+                ProcessDialogInputByKeyboard();
+            }
+            return;  
+        }
+
         ProcessInteractInput();
-
-        if (freeze) { return; }
-
         ProcessPlayerInput();
+    }
+    
+    private void ProcessDialogInputByKeyboard()
+    {
+        bool dialogNextLine = Input.GetKeyDown(dialogKey);
+
+        if (dialogNextLine)
+        {
+            DialogSystem.Instance().NextLine();
+        }
+    }
+
+    public void ProcessDialogInputByButton() // by UI Button (Image DialogBox)
+    {
+        // for now, dialog only happened when the game freeze.
+        // If freeze mechanic changed, this codeblock should be reviewed
+        if (!freeze) { return; }
+
+        DialogSystem.Instance().NextLine();
     }
 
     private void ProcessPlayerInput()
@@ -105,29 +132,32 @@ public class PlayerControl : StaticReference<PlayerControl>
         else { print("ERROR"); }
     }
 
-    private void ProcessInteractInput()
+    public void ProcessInteractInput()
     {
-        bool interact;
-
-        if(playedOnPC)
+        if(playedOnPC) 
         {
-            interact = Input.GetKeyDown(interactKey);
+            bool interact = Input.GetKeyDown(interactKey);
+
+            if (interact)
+            {
+                DoInteraction();
+            }
         } else
         {
-            interact = interactVirtualButton.IsButtonDown();
-        } 
+            // without conditional logic as in mobile & browser it is called by button
+            DoInteraction();
+        }
+    }
 
-
-        if(interact)
+    private void DoInteraction()
+    {
+        if (sensor.InteractableDetected())
         {
-            if (sensor.InteractableDetected())
-            {
-                sensor.Interact();
-            }
-            else
-            {
-                print("attempt to interact when there is no interactable nearby");
-            }
+            sensor.Interact();
+        }
+        else
+        {
+            print("attempt to interact when there is no interactable nearby");
         }
     }
 

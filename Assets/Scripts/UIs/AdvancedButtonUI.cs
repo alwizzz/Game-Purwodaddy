@@ -46,4 +46,5 @@ public class AdvancedButtonUI : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     }
 
     public bool IsButtonDown() => isButtonDown;
+    public Button GetButton() => button;
 }
