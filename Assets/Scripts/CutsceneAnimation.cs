@@ -37,7 +37,7 @@ public class CutsceneAnimation : MonoBehaviour
 
     public void progressToNextGameScene()
     {
-        gameObject.active = false;
+        gameObject.SetActive(false);
         sceneLoader.CallSceneChange();
     }
 }
