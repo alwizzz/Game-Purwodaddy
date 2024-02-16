@@ -17,6 +17,7 @@ MonoBehaviour:
   lines:
   - key: pakbaskoro1
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
@@ -34,6 +35,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal1
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -51,6 +53,7 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro2
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: senyum
     onTheRight: 1
@@ -68,6 +71,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal2
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 1
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -85,6 +89,7 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro3
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
@@ -102,6 +107,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal3
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -119,6 +125,7 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro4
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: normal
     onTheRight: 1
@@ -136,6 +143,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal4-conditional
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -153,6 +161,7 @@ MonoBehaviour:
       nextKey: pakbaskoro-true
   - key: pakbaskoro-false
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: senyum
     onTheRight: 1
@@ -170,6 +179,7 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro-true
     useLaughSoundEffect: 1
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -187,6 +197,7 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro5
     useLaughSoundEffect: 1
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -204,6 +215,7 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro6
     useLaughSoundEffect: 1
+    useInventorySoundEffect: 0
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
@@ -225,6 +237,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal5
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: bingung
     onTheRight: 0
@@ -242,11 +255,12 @@ MonoBehaviour:
       nextKey: 
   - key: pakbaskoro7
     useLaughSoundEffect: 1
+    useInventorySoundEffect: 1
     characterKey: PakBaskoro
     emotionKey: ketawa
     onTheRight: 1
-    content: XXIXIXIXII... Ini, pegangan buat kamu. Semoga xixixixxi, mereka ikhlasin
-      kamu xixixixix... PERGI!!!
+    content: XXIXIXIXII... Ambil kunci ini, pegangan buat kamu. Semoga xixixixxi,
+      mereka ikhlasin kamu xixixixix... PERGI!!!
     nextKey: jamal6
     conditionalDialog: 0
     dialogOption1:
@@ -260,6 +274,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal6
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0

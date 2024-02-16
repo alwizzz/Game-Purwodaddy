@@ -38,8 +38,8 @@ public class PlayerControl : StaticReference<PlayerControl>
         BaseAwake(this);
 
         // browser and mobile use the same input: button
-        //playedOnPC = (Application.isMobilePlatform ? false : true);
-        playedOnPC = true;
+        playedOnPC = (Application.isMobilePlatform ? false : true);
+        //playedOnPC = false;
 
         virtualButtons.SetActive((playedOnPC ? false : true));
     }

@@ -111,6 +111,9 @@ public class DialogSystem : StaticReference<DialogSystem>
             return;
         }
 
+        SoundEffectManager.Instance().PlayOneShotDialogSFX();
+        
+
         if(isTypingLine == true)
         {
             ForceFinishTypingDialogLine();
@@ -174,6 +177,10 @@ public class DialogSystem : StaticReference<DialogSystem>
         {
             SoundEffectManager.Instance().PlayLaughSoundEffect();
         }
+        if (dialogLine.useInventorySoundEffect)
+        {
+            SoundEffectManager.Instance().PlayOneShotInventorySFX();
+        }
 
         onConditionalDialogState = dialogLine.conditionalDialog;
         if (onConditionalDialogState)
@@ -202,6 +209,8 @@ public class DialogSystem : StaticReference<DialogSystem>
             //dialogContent.text = dialogLine.content;
 
         }
+
+
     }
 
     private IEnumerator TypeDialogLine()

@@ -12,6 +12,7 @@ public class DialogInteraction : Interactable
 
     private void Dialog()
     {
+        SoundEffectManager.Instance().PlayOneShotDialogSFX();
         DialogSystem.Instance().NextDialog(dialogData);
     }
 
