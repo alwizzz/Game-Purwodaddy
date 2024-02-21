@@ -21,6 +21,9 @@ public class DialogSystem : StaticReference<DialogSystem>
 
     [Header("Process")]
     [SerializeField] private bool ongoingDialog;
+    [SerializeField] private bool isTypingLine;
+    [SerializeField] private float typingLineDelay;
+    [SerializeField] private bool onConditionalDialogState;
     [SerializeField] private List<DialogData.DialogLine> dialogLines;
     [SerializeField] private DialogData.DialogLine currentDialogLine;
 
@@ -34,10 +37,15 @@ public class DialogSystem : StaticReference<DialogSystem>
     [SerializeField] private Image characterImageRight;
     [SerializeField] private PlayerControl playerControl;
 
-    [SerializeField] private Button dialogNextButton;
+    [SerializeField] private Button imageDialogBox;
+    [SerializeField] private GameObject dialogInstructionText;
+
     [SerializeField] private Button dialogOptionButton1;
     [SerializeField] private Button dialogOptionButton2;
     [SerializeField] private Button dialogOptionButton3;
+
+
+    private Coroutine typingLineCoroutine;
 
 
     private void Awake()
@@ -95,7 +103,7 @@ public class DialogSystem : StaticReference<DialogSystem>
         Load(currentDialogLine);
     }
 
-        public void NextLine(string nextDialogLineKey = "")
+    public void NextLine(string nextDialogLineKey = "")
     {
         if (!ongoingDialog)
         {
@@ -103,14 +111,32 @@ public class DialogSystem : StaticReference<DialogSystem>
             return;
         }
 
-        if(currentDialogLine.nextKey != "END")
+        SoundEffectManager.Instance().PlayOneShotDialogSFX();
+        
+
+        if(isTypingLine == true)
         {
+            ForceFinishTypingDialogLine();
+            return;
+        }
+
+
+        if (currentDialogLine.nextKey != "END")
+        {
+            // only NextLine call with argument is allowed to be called if onConditionalDialogState
             if (nextDialogLineKey == "")
             {
+                if (onConditionalDialogState)
+                {
+                    print("PROHIBITED");
+                    return;
+                }
+
                 currentDialogLine = dialogLines.Find(e => e.key == currentDialogLine.nextKey);
             }
             else
             {
+
                 currentDialogLine = dialogLines.Find(e => e.key == nextDialogLineKey);
             }
             
@@ -138,40 +164,6 @@ public class DialogSystem : StaticReference<DialogSystem>
     private void Load(DialogData.DialogLine dialogLine)
     {
         dialogHeader.text = dialogLine.characterKey;
-        dialogContent.text = dialogLine.content;
-        
-        var conditionalDialog = dialogLine.conditionalDialog;
-        if (conditionalDialog)
-        {
-            dialogNextButton.gameObject.SetActive(false);
-            
-            dialogOptionButton1.onClick.AddListener(
-                () => NextLine(dialogLine.dialogOption1.nextKey)
-            );
-            dialogOptionButton1.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption1.content;
-            dialogOptionButton1.gameObject.SetActive(true);
-
-            dialogOptionButton2.onClick.AddListener(
-                () => NextLine(dialogLine.dialogOption2.nextKey)
-            );
-            dialogOptionButton2.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption2.content;
-            dialogOptionButton2.gameObject.SetActive(true);
-
-            dialogOptionButton3.onClick.AddListener(
-                () => NextLine(dialogLine.dialogOption3.nextKey)
-            );
-            dialogOptionButton3.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption3.content;
-            dialogOptionButton3.gameObject.SetActive(true);
-        } else
-        {
-            dialogNextButton.gameObject.SetActive(true);
-
-            dialogOptionButton1.gameObject.SetActive(false);
-            dialogOptionButton2.gameObject.SetActive(false);
-            dialogOptionButton3.gameObject.SetActive(false);
-        }
-
-
 
         var charImage = LoadCharacterSprite(dialogLine);
         if (charImage == null)
@@ -181,10 +173,97 @@ public class DialogSystem : StaticReference<DialogSystem>
         }
 
         SetupDialogCharacter(dialogLine, charImage);
-        if(dialogLine.useLaughSoundEffect)
+        if (dialogLine.useLaughSoundEffect)
         {
             SoundEffectManager.Instance().PlayLaughSoundEffect();
-        }    
+        }
+        if (dialogLine.useInventorySoundEffect)
+        {
+            SoundEffectManager.Instance().PlayOneShotInventorySFX();
+        }
+
+        onConditionalDialogState = dialogLine.conditionalDialog;
+        if (onConditionalDialogState)
+        {
+            isTypingLine = false;
+            dialogContent.text = dialogLine.content;
+
+            //dialogNextButton.gameObject.SetActive(false);
+            imageDialogBox.interactable = false;
+            dialogInstructionText.SetActive(false);
+
+            SetupDialogOptions(dialogLine);
+        } else
+        {
+            //dialogNextButton.gameObject.SetActive(true);
+            imageDialogBox.interactable = true;
+            dialogInstructionText.SetActive(true);
+
+            dialogOptionButton1.gameObject.SetActive(false);
+            dialogOptionButton2.gameObject.SetActive(false);
+            dialogOptionButton3.gameObject.SetActive(false);
+
+            isTypingLine = true;
+            typingLineCoroutine = StartCoroutine(TypeDialogLine());            
+            //StartCoroutine(TypeDialogLine());
+            //dialogContent.text = dialogLine.content;
+
+        }
+
+
+    }
+
+    private IEnumerator TypeDialogLine()
+    {
+        //isTypingLine = true;
+        //print("brow");
+
+        dialogContent.text = "";
+        string dialogString = currentDialogLine.content;
+
+        for(int i=0; i<dialogString.Length; i++)
+        {
+            if(isTypingLine == false)
+            {
+                break;
+            }
+
+            dialogContent.text += dialogString[i];
+            yield return new WaitForSeconds(typingLineDelay);
+        }
+
+        isTypingLine = false;
+    }
+
+    private void ForceFinishTypingDialogLine()
+    {
+        //StopAllCoroutines();
+        StopCoroutine(typingLineCoroutine);
+        isTypingLine = false;
+        dialogContent.text = currentDialogLine.content;
+    }
+
+    private void SetupDialogOptions(DialogData.DialogLine dialogLine)
+    {
+        print("hoi");
+
+        dialogOptionButton1.onClick.AddListener(
+            () => NextLine(dialogLine.dialogOption1.nextKey)
+        );
+        dialogOptionButton1.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption1.content;
+        dialogOptionButton1.gameObject.SetActive(true);
+
+        dialogOptionButton2.onClick.AddListener(
+            () => NextLine(dialogLine.dialogOption2.nextKey)
+        );
+        dialogOptionButton2.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption2.content;
+        dialogOptionButton2.gameObject.SetActive(true);
+
+        dialogOptionButton3.onClick.AddListener(
+            () => NextLine(dialogLine.dialogOption3.nextKey)
+        );
+        dialogOptionButton3.GetComponentInChildren<TextMeshProUGUI>().text = "     " + dialogLine.dialogOption3.content;
+        dialogOptionButton3.gameObject.SetActive(true);
     }
 
     private Sprite LoadCharacterSprite(DialogData.DialogLine dialogLine)

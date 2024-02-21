@@ -17,6 +17,7 @@ MonoBehaviour:
   lines:
   - key: jamal1
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 1
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0
@@ -34,6 +35,7 @@ MonoBehaviour:
       nextKey: 
   - key: bukokom1
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: BuKokom
     emotionKey: normal
     onTheRight: 1
@@ -51,6 +53,7 @@ MonoBehaviour:
       nextKey: 
   - key: bukokom2
     useLaughSoundEffect: 1
+    useInventorySoundEffect: 0
     characterKey: BuKokom
     emotionKey: ketawa
     onTheRight: 1
@@ -68,6 +71,7 @@ MonoBehaviour:
       nextKey: 
   - key: bukokom3
     useLaughSoundEffect: 1
+    useInventorySoundEffect: 0
     characterKey: BuKokom
     emotionKey: ketawa
     onTheRight: 1
@@ -85,6 +89,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal2
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: kaget
     onTheRight: 0
@@ -102,6 +107,7 @@ MonoBehaviour:
       nextKey: 
   - key: bukokom4
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: BuKokom
     emotionKey: normal
     onTheRight: 1
@@ -120,6 +126,7 @@ MonoBehaviour:
       nextKey: 
   - key: bukokom5
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 1
     characterKey: BuKokom
     emotionKey: normal
     onTheRight: 1
@@ -138,6 +145,7 @@ MonoBehaviour:
       nextKey: 
   - key: jamal3
     useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
     characterKey: Jamal
     emotionKey: normal
     onTheRight: 0

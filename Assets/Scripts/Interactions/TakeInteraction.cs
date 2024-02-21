@@ -15,6 +15,8 @@ public class TakeInteraction : Interactable
 
     private void Take()
     {
+        SoundEffectManager.Instance().PlayOneShotInventorySFX();
+
         InventorySystem.Instance().AddItem(itemKey, informationKey);
         //InformationSystem.Instance().AddInformation(itemKey);
         Destroy(gameObject);

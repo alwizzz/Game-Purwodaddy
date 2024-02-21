@@ -18,6 +18,7 @@ public class DialogData : ScriptableObject
         public string key;
 
         public bool useLaughSoundEffect;
+        public bool useInventorySoundEffect;
 
         public string characterKey;
         public string emotionKey;
