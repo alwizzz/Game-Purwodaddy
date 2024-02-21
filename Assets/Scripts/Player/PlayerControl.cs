@@ -14,7 +14,9 @@ public class PlayerControl : StaticReference<PlayerControl>
     [SerializeField] private KeyCode dialogKey;
 
     [Header("Parameters")]
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float currentMoveSpeed;
+    [SerializeField] private float normalMoveSpeed;
+    [SerializeField] private float panicMoveSpeed;
     [SerializeField] private bool ableToMoveLeft;
     [SerializeField] private bool ableToMoveRight;
 
@@ -30,7 +32,9 @@ public class PlayerControl : StaticReference<PlayerControl>
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
-    [SerializeField] private bool isWalking;
+    [SerializeField] private bool isMoving;
+    [SerializeField] private bool isPanic;
+
 
 
     private void Awake()
@@ -42,6 +46,7 @@ public class PlayerControl : StaticReference<PlayerControl>
         //playedOnPC = false;
 
         virtualButtons.SetActive((playedOnPC ? false : true));
+        SetToPanicMode(false);
     }
 
 
@@ -60,6 +65,12 @@ public class PlayerControl : StaticReference<PlayerControl>
 
         ProcessInteractInput();
         ProcessPlayerInput();
+
+        // small debugging, REMOVE WHEN DEPLOY
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            SetToPanicMode(!isPanic);
+        }
     }
     
     private void ProcessDialogInputByKeyboard()
@@ -100,17 +111,20 @@ public class PlayerControl : StaticReference<PlayerControl>
         // do nothing if either player not pushing any button or pushing both button
         if (moveLeft == moveRight) 
         {
-            animator.SetBool("isWalking", false);
+            isMoving = false;
+            UpdateAnimatorParams();
             footstepAudioSource.Stop();
             return; 
         }
 
-        animator.SetBool("isWalking", true);
+        isMoving = true;
+        UpdateAnimatorParams();
+
         // neutralizer will stop the movement if unable to move in that direction
         if (moveLeft)
         {
             int neutralizer = (ableToMoveLeft ? 1 : 0);
-            transform.Translate(Vector2.left * moveSpeed * neutralizer * Time.deltaTime);
+            transform.Translate(Vector2.left * currentMoveSpeed * neutralizer * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, -180, 0);
             FlipModel(true);
 
@@ -122,7 +136,7 @@ public class PlayerControl : StaticReference<PlayerControl>
         else if (moveRight)
         {
             int neutralizer = (ableToMoveRight ? 1 : 0);
-            transform.Translate(Vector2.right * moveSpeed * neutralizer * Time.deltaTime);
+            transform.Translate(Vector2.right * currentMoveSpeed * neutralizer * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, 0, 0);
             FlipModel(false);
 
@@ -182,12 +196,26 @@ public class PlayerControl : StaticReference<PlayerControl>
     public void SetFreeze(bool value) 
     { 
         freeze = value;
-        animator.SetBool("isWalking", (freeze ? false : true));
+        isMoving = (freeze ? false : true);
+        UpdateAnimatorParams();
 
         if(value == true)
         {
             footstepAudioSource.Stop();
         }
+    }
+
+    private void UpdateAnimatorParams()
+    {
+        animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isPanic", isPanic);
+    }
+
+    public void SetToPanicMode(bool value)
+    {
+        isPanic = value;
+        currentMoveSpeed = (isPanic ? panicMoveSpeed : normalMoveSpeed);
+        UpdateAnimatorParams();
     }
 
 
