@@ -62,14 +62,6 @@ public class GameObjectToScreenScaler : MonoBehaviour
             :
             new Vector3(csrToPsrRatio, csrToPsrRatio, csrToPsrRatio)
         );
-        //if (csrToPsrRatio >= 1f)
-        //{
-        //    // if current screen ratio exceeds preferred screen ratio, set the scale to default 1x1x1
-        //    scaleVector = Vector3.one;
-        //} else
-        //{
-        //    scaleVector = new Vector3(csrToPsrRatio, csrToPsrRatio, csrToPsrRatio);
-        //}
 
         transform.localScale = scaleVector;
         affectedParticleSystems.ForEach(
