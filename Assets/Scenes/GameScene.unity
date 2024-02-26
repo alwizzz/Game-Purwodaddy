@@ -511,7 +511,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2124165858}
         m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
-        m_MethodName: ProcessInteractInput
+        m_MethodName: ProcessInteractInputByButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128146152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 354494cc95c69614787b287d62ced49d, type: 3}
   m_Name: 
@@ -576,6 +576,7 @@ MonoBehaviour:
   minAlpha: 0.4
   maxAlpha: 1
   playerSensor: {fileID: 1667114183}
+  affectInteractability: 0
 --- !u!1 &138746977
 GameObject:
   m_ObjectHideFlags: 0

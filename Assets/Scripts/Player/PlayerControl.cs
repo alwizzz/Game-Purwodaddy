@@ -148,7 +148,7 @@ public class PlayerControl : StaticReference<PlayerControl>
         else { print("ERROR"); }
     }
 
-    public void ProcessInteractInput()
+    private void ProcessInteractInput()
     {
         if(playedOnPC) 
         {
@@ -160,9 +160,16 @@ public class PlayerControl : StaticReference<PlayerControl>
             }
         } else
         {
-            // without conditional logic as in mobile & browser it is called by button
-            DoInteraction();
+            // without input's conditional logic as in mobile & browser it is called by button
+
+            //DoInteraction();
         }
+    }
+
+    public void ProcessInteractInputByButton()
+    {
+        if (freeze) return;
+        DoInteraction();
     }
 
     private void DoInteraction()

@@ -12,18 +12,20 @@ public class ButtonPulseEffect : MonoBehaviour
     [SerializeField] private float maxAlpha;
 
     [SerializeField] private PlayerSensor playerSensor;
+    [SerializeField] private bool affectInteractability;
 
     private Image image;
     private Button button;
 
-    // unexplained by the script name, but this script also adds adaptive interactability according
-    // to whether exists interactableNearby or not
+    // unexplained by the script name, but this script also adds option of adaptive interactability according
+    // to whether if playerSensor.interactableDetected is true or false
 
     private void Awake()
     {
         image = GetComponent<Image>();
         button = GetComponent<Button>();
 
+        StopPulsing();
     }
 
     private void Update()
@@ -57,7 +59,10 @@ public class ButtonPulseEffect : MonoBehaviour
 
     public void StartPulsing()
     {
-        button.interactable = true;
+        if (affectInteractability)
+        {
+            button.interactable = true;
+        }
 
         isPulsing = true;
         Reset();
@@ -68,7 +73,10 @@ public class ButtonPulseEffect : MonoBehaviour
         isPulsing = false;
         Reset();
 
-        button.interactable = false;
+        if(affectInteractability)
+        {
+            button.interactable = false;
+        }
     }
 
     private void Reset()
