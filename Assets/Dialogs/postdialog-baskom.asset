@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
+  m_Name: postdialog-baskom
+  m_EditorClassIdentifier: 
+  dialogKey: postdialog-baskom
+  informationKey: none
+  lines:
+  - key: baskom1
+    useLaughSoundEffect: 1
+    useInventorySoundEffect: 0
+    characterKey: Baskom
+    emotionKey: ketawa
+    onTheRight: 1
+    content: Bang gip skin Alok bang HHaahhahAHAHahhahaha
+    nextKey: jamal1
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  - key: jamal1
+    useLaughSoundEffect: 0
+    useInventorySoundEffect: 0
+    characterKey: Jamal
+    emotionKey: bingung
+    onTheRight: 0
+    content: Ngapa ni bocah
+    nextKey: END
+    conditionalDialog: 0
+    dialogOption1:
+      content: 
+      nextKey: 
+    dialogOption2:
+      content: 
+      nextKey: 
+    dialogOption3:
+      content: 
+      nextKey: 
+  initialLineKey: baskom1
