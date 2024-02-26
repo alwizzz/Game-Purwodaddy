@@ -434,6 +434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128146153}
+  - component: {fileID: 128146157}
   - component: {fileID: 128146156}
   - component: {fileID: 128146155}
   - component: {fileID: 128146154}
@@ -453,7 +454,7 @@ RectTransform:
   m_GameObject: {fileID: 128146152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1157973926}
@@ -462,7 +463,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 816.19006, y: 0.000045776367}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 3000.0002, y: 3000.0002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128146154
 MonoBehaviour:
@@ -540,8 +541,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: efe71b32c85c8684290eddd309fb0fdd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -558,6 +559,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128146152}
   m_CullTransparentMesh: 1
+--- !u!114 &128146157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128146152}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354494cc95c69614787b287d62ced49d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPulsing: 0
+  pulseSpeed: 0.8
+  minAlpha: 0.4
+  maxAlpha: 1
+  playerSensor: {fileID: 1667114183}
 --- !u!1 &138746977
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +601,7 @@ Transform:
   m_GameObject: {fileID: 138746977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3184151, y: -0.037904497, z: 0.036899365}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -774,7 +792,7 @@ RectTransform:
   m_GameObject: {fileID: 218675520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1258448910}
@@ -783,7 +801,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -120, y: 0}
-  m_SizeDelta: {x: 160, y: 100}
+  m_SizeDelta: {x: 3000.0002, y: 3000.0002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218675522
 MonoBehaviour:
@@ -849,8 +867,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d48b2ddeee58e234ebe2a73c9a13b0db, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1579,7 +1597,7 @@ Transform:
   m_GameObject: {fileID: 491981992}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3184151, y: -0.037904497, z: 0.036899365}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2000,13 +2018,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629080899}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.8, y: -3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1340728466}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &629080901
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -2335,7 +2353,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2493,7 +2511,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -2546,7 +2564,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -2599,8 +2617,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 0.06981317
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2650,7 +2668,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    randomizeRotationDirection: 0
+    randomizeRotationDirection: 0.45
     gravitySource: 1
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
@@ -2712,14 +2730,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 10
     angle: 90
     length: 9.42
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0
+    radiusThickness: 0.09
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 40}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -2796,7 +2814,7 @@ ParticleSystem:
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
-    sphericalDirectionAmount: 0
+    sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
       value: 5
@@ -2857,12 +2875,12 @@ ParticleSystem:
           m_RotationOrder: 4
     arc:
       value: 100
-      mode: 0
+      mode: 2
       spread: 0
       speed:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 1
+        scalar: 0.47
         minScalar: 1
         maxCurve:
           serializedVersion: 2
@@ -3536,7 +3554,6 @@ ParticleSystem:
     rowMode: 1
     sprites:
     - sprite: {fileID: 21300000, guid: d6ec5523bda4d5e47961ddbb2dd36f0d, type: 3}
-    - sprite: {fileID: 21300000, guid: 64460c92d7b2b3e4da1c5e6deb78cd15, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -7119,7 +7136,7 @@ Transform:
   m_GameObject: {fileID: 897065154}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3184151, y: -0.037904497, z: 0.036899365}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8261,7 +8278,7 @@ Transform:
   m_GameObject: {fileID: 1314890374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3184151, y: -0.037904497, z: 0.036899365}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9101,6 +9118,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64a965b2c8a04b49b6e1a9a4b19f84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1667114183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8259914374524817643, guid: 8c1d70801b2e9b941b78e88278f1a0f2, type: 3}
+  m_PrefabInstance: {fileID: 5211983270279979064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be76474bffaf9b742b6c059ef5c4a9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683537059
 GameObject:
   m_ObjectHideFlags: 0
@@ -9130,7 +9158,7 @@ RectTransform:
   m_GameObject: {fileID: 1683537059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 308527144}
@@ -9139,7 +9167,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 120, y: 0}
-  m_SizeDelta: {x: 160, y: 100}
+  m_SizeDelta: {x: 3000.0002, y: 3000.0002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683537061
 MonoBehaviour:
@@ -9205,8 +9233,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d8684044c841c8447b7d9d9864ac3ab4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10348,7 +10376,7 @@ Transform:
   m_GameObject: {fileID: 2145186850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3184151, y: -0.037904497, z: 0.036899365}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12160,9 +12188,9 @@ SceneRoots:
   - {fileID: 1314890375}
   - {fileID: 380032409}
   - {fileID: 519420032}
-  - {fileID: 8676735178577068446}
-  - {fileID: 2058828698}
   - {fileID: 2118794623}
+  - {fileID: 2058828698}
+  - {fileID: 8676735178577068446}
   - {fileID: 958738441}
   - {fileID: 138746978}
   - {fileID: 5211983270279979064}
