@@ -10,36 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
-  m_Name: postdialog-pakbaskoro
+  m_Name: act2-0X-bukokom-oneliner
   m_EditorClassIdentifier: 
-  dialogKey: postdialog-baskom
+  dialogKey: act2-01-bukokom1
   informationKey: none
   lines:
-  - key: pakbaskoro1
-    useLaughSoundEffect: 1
-    useInventorySoundEffect: 0
-    characterKey: PakBaskoro
-    emotionKey: ketawa
-    onTheRight: 1
-    content: Angka berapa yang lucu? Angka 11 11 11 11 11 soalnya XIXIXIXIXI
-    nextKey: jamal1
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: jamal1
+  - key: bukokom1
     useLaughSoundEffect: 0
     useInventorySoundEffect: 0
-    characterKey: Jamal
-    emotionKey: kaget
-    onTheRight: 0
-    content: ( Gua harus pergi dari kampung ini! )
+    characterKey: BuKokom
+    emotionKey: bingung
+    onTheRight: 1
+    content: Tolong carikan <b>keranjang</b> saya ya mas
     nextKey: END
     conditionalDialog: 0
     dialogOption1:
@@ -51,4 +33,4 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  initialLineKey: pakbaskoro1
+  initialLineKey: bukokom1

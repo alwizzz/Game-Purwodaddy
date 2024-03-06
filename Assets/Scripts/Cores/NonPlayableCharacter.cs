@@ -8,6 +8,10 @@ public class NonPlayableCharacter : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [Header("Animator's Parameters")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private bool isMad;
+
     private void Update()
     {
         UpdateSpriteOrientation();
@@ -23,5 +27,11 @@ public class NonPlayableCharacter : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+    }
+
+    public void SetToMad(bool value)
+    {
+        isMad = value;
+        animator.SetBool("isMad", isMad);
     }
 }

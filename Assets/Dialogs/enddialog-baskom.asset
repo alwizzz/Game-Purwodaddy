@@ -10,36 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d60cf4201ac9524abc7f7d4c2de94a0, type: 3}
-  m_Name: postdialog-bukokom
+  m_Name: enddialog-baskom
   m_EditorClassIdentifier: 
-  dialogKey: postdialog-bukokom
+  dialogKey: enddialog-baskom
   informationKey: none
   lines:
-  - key: bukokom1
+  - key: baskom1
     useLaughSoundEffect: 1
     useInventorySoundEffect: 0
-    characterKey: BuKokom
+    characterKey: Baskom
     emotionKey: ketawa
     onTheRight: 1
-    content: Minta nomor WA nya dong mas KhakkAHkAHkahAKhah
-    nextKey: jamal1
-    conditionalDialog: 0
-    dialogOption1:
-      content: 
-      nextKey: 
-    dialogOption2:
-      content: 
-      nextKey: 
-    dialogOption3:
-      content: 
-      nextKey: 
-  - key: jamal1
-    useLaughSoundEffect: 0
-    useInventorySoundEffect: 0
-    characterKey: Jamal
-    emotionKey: bingung
-    onTheRight: 0
-    content: Ngga dulu bu
+    content: ' HHaahhahAHAHahhahahaHHaahhahAHAHahhahaha HHaahhahAHAHahhahahaHHaahhahAHAHahhahaha
+      HHaahhahAHAHahhahaha HHaahhahAHAHahhahahaHHaahhahAHAHahhahaha HHaahhahAHAHahhahahaHHaahhahAHAHahhahahaHHaahhahAHAHahhahaha'
     nextKey: END
     conditionalDialog: 0
     dialogOption1:
@@ -51,4 +34,4 @@ MonoBehaviour:
     dialogOption3:
       content: 
       nextKey: 
-  initialLineKey: bukokom1
+  initialLineKey: baskom1
