@@ -28,6 +28,7 @@ public class PlayerControl : StaticReference<PlayerControl>
 
     [SerializeField] private GameObject virtualButtons;
     [SerializeField] private AudioSource footstepAudioSource;
+    [SerializeField] private QuitButton quitButton;
 
 
     [Header("Animator")]
@@ -62,6 +63,8 @@ public class PlayerControl : StaticReference<PlayerControl>
             }
             return;  
         }
+
+        quitButton.DeselectButton();
 
         ProcessInteractInput();
         ProcessPlayerInput();
